@@ -11,6 +11,6 @@ $paths = array(
 
 
 //include main config file
-require_once $paths["config"]."database.php";
+//require_once $paths["config"]."database.php";
 
 ?>

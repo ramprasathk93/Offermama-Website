@@ -3,9 +3,6 @@
 //require_once "../main.php";
 require_once "../../config/database.php";
 
-if (!isset($_POST['cat']))
-    exit;
-
 $cat=$_POST['cat'];
 
 if(!strcmp($cat,"home"))
