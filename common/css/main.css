@@ -11,6 +11,9 @@
 .row{
     max-width: 100%;
 }
+.offer{
+    margin:0;
+}
 .offer:hover{
 	cursor:hand;
 	background-color:#eff6f9;
@@ -19,7 +22,6 @@
 	height:590;
     overflow-y:auto;
 	background-color:WHITE;
-	border-radius:15;
 }
 .p2p{
 	height:590;

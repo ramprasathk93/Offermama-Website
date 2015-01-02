@@ -7,7 +7,6 @@ $cat=$_POST['cat'];
 
 if(!strcmp($cat,"home"))
 {
-   echo '<div class="mini_taskbar"><div class="o_recent">Recent</div><div class="o_top">Top</div></div>';
    foreach($conn->query("select * from post_b order by likes_count desc") as $row)
    {
        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
