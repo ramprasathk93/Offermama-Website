@@ -65,8 +65,20 @@
         });
     }
     function click_home(){
-        $.post('offers.php',{'cat':"home"},function(response){            
-            $(".wall").html(response);
+        $.post('offers.php',{'cat':"home"},function(response){                   var str='<div class"contain-to-grid fixed">\
+<nav class="top-bar" data-topbar>\
+<section class="top-bar-section">\
+<ul class="left">\
+<li class="divider"></li>\
+<li><a onclick="click_o_top()">Top</a></li>\
+<li class="divider"></li>\
+<li><a onclick="click_o_recent()">Recent</a></li>\
+</ul>\
+</section>\
+</nav>\
+</div>';
+            
+            $(".wall").html(str + response);
         })       
     }
     
