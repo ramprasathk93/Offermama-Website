@@ -65,7 +65,7 @@
         });
     }
     function click_home(){
-        $.post('offers.php',{'cat':"home"},function(response){
+        $.post('offers.php',{'cat':"home"},function(response){            
             $(".wall").html(response);
         })       
     }
