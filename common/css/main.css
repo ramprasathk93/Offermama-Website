@@ -1,0 +1,59 @@
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+.tabs dd > a, .tabs .tab-title > a
+{
+    width: 180px;
+}
+.row{
+    max-width: 100%;
+}
+.offer:hover{
+	cursor:hand;
+	background-color:#eff6f9;
+}
+.wall{
+	height:590;
+    overflow-y:auto;
+	background-color:WHITE;
+	border-radius:15;
+}
+.p2p{
+	height:590;
+    overflow-y:auto;
+	background-color:WHITE;
+	border-radius:15;
+}
+.maincategory{
+	border-radius:15;
+}
+.signup-panel {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 30px;
+}
+.signup-panel i {
+  font-size: 30px;
+  line-height: 50px;
+  color: #999;
+}
+.signup-panel form input, .signup-panel form span {
+  height: 50px;
+}
+.signup-panel .welcome {
+  font-size: 26px;
+  text-align: center;
+  margin-left: 0;
+}
+.signup-panel p {
+  font-size: 13px;
+  font-weight: 200;
+  margin-left: 25%;
+}
+.signup-panel .button {
+  margin-left: 35%;
+}

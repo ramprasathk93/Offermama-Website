@@ -2,29 +2,79 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Offer Mama</title>
+<link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
+<link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
+<link rel="stylesheet" type="text/css" href="../../common/css/main.css">
 <script src="../../common/js/jquery.min.js"></script>
 <script src=functions.js></script>
-<link rel="stylesheet" type="text/css" href="../../common/css/basic.css">
+<script src="../../common/js/foundation.js"></script>
 </head>
-
 <body>
-<div class="taskbar">
-<div class="home" onclick=click_home()>Home</div>
-<div class="tlog">Log In</div>
-<div class="treg">Register</div>
+<div class"contain-to-grid fixed">
+<nav class="top-bar" data-topbar>
+<ul class="title-area">
+ 
+<li class="name">
+<h1>
+<a onclick="click_home()">
+Offermama
+</a>
+</h1>
+</li>
+<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+</ul>
+<section class="top-bar-section">
+ 
+<ul class="left">
+<li class="divider"></li>
+<li><a onclick="click_sell()">Sell your stuff</a></li>
+<li class="divider"></li>
+</ul>
+ 
+<ul class="right">
+<li class="divider"></li>
+<li><a onclick="click_register()">Register</a></li>
+<li class="divider"></li>
+<li><a onclick="click_login()">Login</a></li>
+</ul>
+</section>
+</nav>
 </div>
+<br/>
+<div class="row">
+    <div class="large-2 small-uncentered columns small-12 maincategory">
+      <!--<ul class="nav-bar vertical">
+        <li><a href="#">Restaurants</a>
+        </li>
+        <li><a href="#">Books</a>
+        </li>
+        <li><a href="#">Cabs/Tours</a>
+        </li>
+        <li><a href="#">Cakes/Gifts</a>
+        </li>
+        <li><a href="#">P2P</a>
+        </li>
 
-<div class="maincategory">
-<div class="category" id="restaurants" onclick=click_res()>Restaurants</div>
-<div class="category" id="books" onclick=click_books()>Books</div>
-<div class="category" id="transport" onclick=click_trans()>Cabs & Tours</div>
-<div class="category" id="pg" onclick=click_pg()>PG/Rentals</div>
-<div class="category" id="p2p" onclick=click_p2p()>P2P</div>
-</div>
-<div class="wall"><br/>
-?>
-</div>
-<div class="p2p">Peer to Peer
+      </ul>
+    -->
+        <dl class="tabs pill vertical">
+          <dd><a onclick="click_res()">Restaurants</a></dd>
+          <dd><a onclick="click_books()">Books</a></dd>
+          <dd><a onclick="click_trans()">Cabs/Tours</a></dd>
+          <dd><a onclick="click_pg()">Cakes/Gifts</a></dd>
+          <dd><a onclick="click_p2p()">P2P</a></dd>
+        </dl>
+    </div>
+    <div class="large-6 columns">
+        <div class="wall">
+            <p>wall</p>
+        </div>
+    </div>
+    <div class="large-4 columns">
+        <div class="p2p">
+            <p>p2p</p>
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -52,6 +52,18 @@
         });
     });
     
+    function click_register(){
+        $.post('register.html',function(response){
+            $(".wall").html(response);
+            $(".p2p").html("");
+        });
+    }
+    function click_login(){
+        $.post('login.html',function(response){
+            $(".wall").html(response);
+            $(".p2p").html("");
+        });
+    }
     function click_home(){
         $.post('offers.php',{'cat':"home"},function(response){
             $(".wall").html(response);
@@ -114,7 +126,7 @@
     
     function click_sell(){
         $.post('form.php',function(response){
-            $(".p2p").html(response);
+            $(".wall").html(response);
         })       
     }
     
