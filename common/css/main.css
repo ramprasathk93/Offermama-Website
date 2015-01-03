@@ -21,6 +21,13 @@
 	cursor:hand;
 	background-color:#eff6f9;
 }
+.poffer{
+    margin:0;
+}
+.poffer:hover{
+    cursor:hand;
+	background-color:#eff6f9;
+}
 .wall{
 	height:590;
     overflow-y:auto;

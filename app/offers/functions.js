@@ -31,36 +31,11 @@
         })       
     }  
     
-    function click_res(){
-        $.post('offers.php',{'cat':"restaurants"},function(response){
+    function click_cat(id){
+        $.post('offers.php',{'cat':id},function(response){
             $(".wall").html(response);
         })       
     }
-
-    function click_books(){
-        $.post('offers.php',{'cat':"books"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-
-    function click_pg(){
-        $.post('offers.php',{'cat':"pg"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-    
-    function click_trans(){
-        $.post('offers.php',{'cat':"transport"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-    
-    function click_p2p(){
-        $.post('p2p_offers.php',function(response){
-            $(".wall").html(response);
-        })       
-    }
-    
     function click_o_top(){
         $.post('offer_top.php',{'cat':"home"},function(response){
             $(".wall").html(response);
