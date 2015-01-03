@@ -32,14 +32,21 @@
     }  
     
     function click_cat(id){
+        $('#restaurants').removeClass('active_category');
+        $('#books').removeClass('active_category');
+        $('#transport').removeClass('active_category');
+        $('#cg').removeClass('active_category');
+        $('#p2p').removeClass('active_category');
+        $('#'+id).addClass('active_category');
         $.post('offers.php',{'cat':id},function(response){
             $(".wall").html(response);
-        })       
+        });       
     }
     function click_o_top(){
-        $.post('offer_top.php',{'cat':"home"},function(response){
-            $(".wall").html(response);
-        })       
+        //$.post('offer_top.php',{'cat':"home"},function(response){
+        //    $(".wall").html(response);
+        //});
+        
     }
     
     function click_o_recent(){

@@ -11,8 +11,8 @@
 .row{
     max-width: 100%;
 }
-.active_category{
-    color:#e1e1e1;
+.tabs dd > a.active_category{
+    background-color:#e1e1e1;
 }
 .offer{
     margin:0;
