@@ -63,10 +63,16 @@ catch(PDOException $e)
 try {
     
     foreach($conn->query('select * from comment where post_id="'.$q.'"') as $row){
-		echo '<div class="panel offer" id="'.$row['post_id'].'">'.$row['content'].'</div>';
-	
+        foreach($conn->query('select * from user_info where u_id="'.$row['u_id'].'"') as $k){
+        echo '<div class="panel offer" id="'.$row['post_id'].'"><div class="row">';
+        echo '<div class="small-4 small-uncentered columns">'.$k['name'].'</div></div>';
+        echo '<div class="row"><div class="small-12 small-uncentered columns">'.$row['content'].'</div></div>';
+        echo '<div class="row"><div class="small-2 small-uncentered columns"><img src=#/></div>';
+        echo '<div class="small-4 small-uncentered columns">'.$row['likes'].' likes</div></div></div>';
+        
     }
 	
+}
 }
 catch(PDOException $e)
     {
