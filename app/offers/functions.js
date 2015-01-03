@@ -3,7 +3,7 @@
         $.ajax({type: "POST",
     url: "offers.php",             
     dataType: "html",   //expect html to be returned
-    data:{cat:"home"},
+    data:{cat:"home",sort:0},
     success: function(response){
         $(".wall").html(response); 
         //alert(response);
@@ -31,80 +31,25 @@
         })       
     }  
     
-    function click_cat(id){
+    function click_cat(id,k){
+        id=typeof id !== 'undefined'?id:'home';
+        k=typeof k !== 'undefined'?k:0;
         $('#restaurants').removeClass('active_category');
         $('#books').removeClass('active_category');
         $('#transport').removeClass('active_category');
         $('#cg').removeClass('active_category');
         $('#p2p').removeClass('active_category');
         $('#'+id).addClass('active_category');
-        $.post('offers.php',{'cat':id},function(response){
+        $.post('offers.php',{'cat':id,'sort':k},function(response){
             $(".wall").html(response);
         });       
     }
-    function click_o_top(){
-        //$.post('offer_top.php',{'cat':"home"},function(response){
-        //    $(".wall").html(response);
-        //});
-        
+    function click_top(){
+        var cat=$('.active_category').attr('id');
+        click_cat(cat,0);
     }
     
-    function click_o_recent(){
-        $.post('offer_recent.php',{'cat':"home"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-    
-    function click_sell(){
-        $.post('form.php',function(response){
-            $(".wall").html(response);
-        })       
-    }
-    
-    function click_res_top(){
-        $.post('offer_top.php',{'cat':"restaurants"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-    
-    function click_res_recent(){
-        $.post('offer_recent.php',{'cat':"restaurants"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-    
-    function click_books_top(){
-        $.post('offer_top.php',{'cat':"books"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-
-    function click_books_recent(){
-        $.post('offer_recent.php',{'cat':"books"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-    
-    function click_pg_top(){
-        $.post('offer_top.php',{'cat':"pg"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-
-    function click_pg_recent(){
-        $.post('offer_recent.php',{'cat':"pg"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-
-    function click_trans_top(){
-        $.post('offer_top.php',{'cat':"transport"},function(response){
-            $(".wall").html(response);
-        })       
-    }
-
-    function click_trans_recent(){
-        $.post('offer_recent.php',{'cat':"transport"},function(response){
-            $(".wall").html(response);
-        })       
+    function click_recent(){
+        var cat=$('.active_category').attr('id');
+        click_cat(cat,1);
     }
