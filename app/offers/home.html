@@ -1,6 +1,5 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Offer Mama</title>
 <link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
@@ -16,7 +15,7 @@
  
 <li class="name">
 <h1>
-<a onclick="click_home()">
+<a href="home.html">
 Offermama
 </a>
 </h1>
@@ -27,15 +26,15 @@ Offermama
  
 <ul class="left">
 <li class="divider"></li>
-<li><a onclick="click_sell()">Sell your stuff</a></li>
+<li><a href='user_ad.html'>Sell your stuff</a></li>
 <li class="divider"></li>
 </ul>
  
 <ul class="right">
 <li class="divider"></li>
-<li><a onclick="click_register()">Register</a></li>
+<li><a href="register.html">Register</a></li>
 <li class="divider"></li>
-<li><a onclick="click_login()">Login</a></li>
+<li><a href='login.html'>Login</a></li>
 </ul>
 </section>
 </nav>
@@ -43,29 +42,27 @@ Offermama
 <br/>
 <div class="row">
     <div class="large-2 small-uncentered columns small-12 maincategory">
-      <!--<ul class="nav-bar vertical">
-        <li><a href="#">Restaurants</a>
-        </li>
-        <li><a href="#">Books</a>
-        </li>
-        <li><a href="#">Cabs/Tours</a>
-        </li>
-        <li><a href="#">Cakes/Gifts</a>
-        </li>
-        <li><a href="#">P2P</a>
-        </li>
-
-      </ul>
-    -->
-        <dl class="tabs pill vertical">
-          <dd><a onclick="click_res()">Restaurants</a></dd>
-          <dd><a onclick="click_books()">Books</a></dd>
-          <dd><a onclick="click_trans()">Cabs/Tours</a></dd>
-          <dd><a onclick="click_pg()">Cakes/Gifts</a></dd>
-          <dd><a onclick="click_p2p()">P2P</a></dd>
+         <dl class="tabs pill vertical">
+          <dd><a data-id="1" onclick="click_res()">Restaurants</a></dd>
+          <dd><a data-id="2" onclick="click_books()">Books</a></dd>
+          <dd><a data-id="3" onclick="click_trans()">Cabs/Tours</a></dd>
+          <dd><a data-id="4" onclick="click_pg()">Cakes/Gifts</a></dd>
+          <dd><a data-id="5" onclick="click_p2p()">P2P</a></dd>
         </dl>
     </div>
     <div class="large-6 columns">
+        <div class"contain-to-grid fixed">
+        <nav class="top-bar" data-topbar>
+        <section class="top-bar-section">
+        <ul class="left">
+        <li class="divider"></li>
+        <li><a onclick="click_o_top()">Top</a></li>
+        <li class="divider"></li>
+        <li><a onclick="click_o_recent()">Recent</a></li>
+        </ul>
+        </section>
+        </nav>
+        </div>
         <div class="wall">
             <p>wall</p>
         </div>
