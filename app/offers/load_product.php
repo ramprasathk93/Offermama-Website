@@ -1,5 +1,4 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
- <script>
+<script>
             $(document).ready(function() {
             var text_max = 140;
             $('#textarea_feedback').html(text_max + ' characters remaining');

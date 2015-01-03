@@ -11,6 +11,9 @@
 .row{
     max-width: 100%;
 }
+.active_category{
+    color:#e1e1e1;
+}
 .offer{
     margin:0;
 }

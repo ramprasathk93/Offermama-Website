@@ -13,62 +13,11 @@
     $(document).on('click','.o_top',function(){click_o_top();});
     $(document).on('click','.o_recent',function(){click_o_recent();});
     
-    
-    $(document).on('click','#submit_btn',function(){
-        /*
-        var formdata= new FormData($('#userpost'));     
-        
-        $.ajax({
-            url:'validate.php',
-            dataType:'html',
-            type:'POST',
-            data:formdata,
-            success:function(response){
-                $('.p2p').html(response);
-            },
-            cache:false,
-            contentType:false,
-            processData:false
-        });
-        */
-       /* var form=document.getElementById('userpost');
-        var fileselect=document.getElementById('fileToUpload');
-        var files=fileselect.files;
-        var formData=new FormData();
-        var file=files[0];
-        formData.append('photo',file,file.name);
-        formData.append('content',$('#userpost').val());
-        formData.append('chk',document.getElementsByName('chk').value());
-        var xhr=new XMLHttpRequest();
-        xhr.open('POST','validate.php',true);
-        xhr.send(formData);
-        $('.p2p').html("Upload Successfull");
-        */
-    });
-    
     $(document).on('click','#comment_btn',function(){
         $.post('validate_comment.php',$('#usercomment').serialize(),function(response){
         $('.p2p').html(response);
         });
     });
-    
-    function click_register(){
-        $.post('register.html',function(response){
-            $(".wall").html(response);
-            $(".p2p").html("");
-        });
-    }
-    function click_login(){
-        $.post('login.html',function(response){
-            $(".wall").html(response);
-            $(".p2p").html("");
-        });
-    }
-    function click_home(){
-        $.post('offers.php',{'cat':"home"},function(response){       
-            $(".wall").html(response);
-        })       
-    }
     
     function click_poffer(id){
         $.post('load_product_p2p.php',{'id':id},function(response){
