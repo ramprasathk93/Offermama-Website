@@ -57,12 +57,13 @@ catch(PDOException $e)
         ?>
         </div>
 </form>
+<br/>
 <div class="comments">
 <?php
 try {
     
     foreach($conn->query('select * from comment where post_id="'.$q.'"') as $row){
-		echo '<div class="offer" id="'.$row['post_id'].'">'.$row['content'].'</div>';
+		echo '<div class="panel offer" id="'.$row['post_id'].'">'.$row['content'].'</div>';
 	
     }
 	
