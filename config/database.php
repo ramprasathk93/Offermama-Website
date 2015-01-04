@@ -3,7 +3,7 @@
 //database configurations
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "offermama";
 
 //try to connect to database
