@@ -78,20 +78,22 @@ Offermama
 </ul>
 </section>
 </nav>
-</div>    
-<form name="userpost" id="userpost"  enctype="multipart/form-data"  >
-<fieldset><legend>User Advertisement form</legend>
-<p>
+</div>
+<div class="row"><div class="small-12 small-centered columns">
+<div class="row">
+<div class="small-12 small-centered columns">    
 <label class="field" for="content">Content:</label>
-<textarea name="content" id="textarea" rows="8" cols="30%" maxlength="140"></textarea><br/>
+<textarea name="content" id="textarea" rows="8" cols="30%" maxlength="140"></textarea>
+</div>
+</div>
 <div id="textarea_feedback"></div><br>
-<p/>
-<p>
+<div class="row">
+<div class="small-6 columns">
 <label class="field" for="image">Upload a image:</label>
-<input name="fileToUpload" type="file" id="fileToUpload"> <br/>
-<p/>
-<p>
-<label class="field" for="target" size="20">Market Target:</label><br>
+<input name="fileToUpload" type="file" id="fileToUpload">
+</div>
+<div class="small-6 columns">
+<label class="field" for="target" size="20">Target Market:</label><br>
 <input type="radio" name="chk" value="all" id="group1">All<br>
 <input type="radio" name="chk" value="firstyr" class="group1">First year Students<br>
 <input type="radio" name="chk" value="secondyr" class="group1">Second year Students<br>
@@ -100,9 +102,11 @@ Offermama
 <input type="radio" name="chk" value="staff" class="group1">Staff/Others<br>
 <!--<input name="upload" type="submit" class="box" id="upload" value="Upload" >-->
 <button class="box" id="submit_btn" >Submit</button>
-<p/>
-</fieldset>
+</div>
+</div>
 </form>
+</div>
+</div>
 </body>
 </html>    
         
