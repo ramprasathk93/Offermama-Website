@@ -28,7 +28,7 @@
 $q = $_REQUEST['id'];
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=offermama", $username, $password);
     // set the PDO error mode to exception
