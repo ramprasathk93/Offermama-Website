@@ -8,8 +8,27 @@
 {
     width: 180px;
 }
-.row{
+
+<!--.row{
     max-width: 100%;
+}-->
+.wall::-webkit-scrollbar{
+    width:6px;
+    background-color:#eff6f9;
+}
+.wall::-webkit-scrollbar-thumb{
+    width:6px;
+    background-color:#e1e1e1;
+    border-radius:10px;
+}
+.p2p::-webkit-scrollbar{
+    width:6px;
+    background-color:#eff6f9;
+}
+.p2p::-webkit-scrollbar-thumb{
+    width:6px;
+    background-color:#e1e1e1;
+    border-radius:10px;
 }
 .tabs dd > a.active_category{
     background-color:#e1e1e1;
@@ -29,15 +48,16 @@
 	background-color:#eff6f9;
 }
 .wall{
-	height:590;
+	height:80%;
     overflow-y:auto;
 	background-color:WHITE;
+    border-radius:5px;
 }
 .p2p{
-	height:590;
+	height:85%;
     overflow-y:auto;
 	background-color:WHITE;
-	border-radius:15;
+    border-radius:5px;
 }
 .maincategory{
 	border-radius:15;

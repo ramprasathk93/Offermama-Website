@@ -1,28 +1,26 @@
-
+//
     $(document).ready(function(){
        click_cat('home',0);
     });
-    $(document).on('click','.o_top',function(){click_o_top();});
-    $(document).on('click','.o_recent',function(){click_o_recent();});
     
     $(document).on('click','#comment_btn',function(){
         $.post('validate_comment.php',$('#usercomment').serialize(),function(response){
         $('.p2p').html(response);
         });
     });
-    
+//funciton to load the  p2p offer details
     function click_poffer(id){
         $.post('load_product_p2p.php',{'id':id},function(response){
             $(".p2p").html(response);
         })       
     } 
-
+//fucntion to load the offer details
     function click_offer(id){
         $.post('load_product.php',{'id':id},function(response){
             $(".p2p").html(response);
         })       
     }  
-    
+    //funciton to display offers based on the category
     function click_cat(id,k){
         id=typeof id !== 'undefined'?id:'home';
         k=typeof k !== 'undefined'?k:0;
@@ -79,11 +77,12 @@
         });
         }
     }
+//function to find the top offers
     function click_top(){
         var cat=$('.active_category').attr('id');
         click_cat(cat,0);
     }
-    
+//function to find the most recent offers
     function click_recent(){
         var cat=$('.active_category').attr('id');
         click_cat(cat,1);
