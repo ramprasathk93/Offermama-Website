@@ -51,11 +51,13 @@
 	height:80%;
     overflow-y:auto;
 	background-color:WHITE;
+    border-radius:5px;
 }
 .p2p{
 	height:85%;
     overflow-y:auto;
 	background-color:WHITE;
+    border-radius:5px;
 }
 .maincategory{
 	border-radius:15;
