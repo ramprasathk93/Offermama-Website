@@ -35,15 +35,15 @@
         <section class="top-bar-section">\
         <ul class="left">\
         <li class="divider"></li>\
-        <li><a onclick="click_year(0)">General</a></li>\
+        <li><a style="background-color:#44619d;" onclick="click_year(0)">General</a></li>\
         <li class="divider"></li>\
-        <li><a onclick="click_year(1)">1st year</a></li>\
+        <li><a style="background-color:#44619d;" onclick="click_year(1)">1st year</a></li>\
         <li class="divider"></li>\
-        <li><a onclick="click_year(2)">2nd year</a></li>\
+        <li><a style="background-color:#44619d;" onclick="click_year(2)">2nd year</a></li>\
         <li class="divider"></li>\
-        <li><a onclick="click_year(3)">3rd year</a></li>\
+        <li><a style="background-color:#44619d;" onclick="click_year(3)">3rd year</a></li>\
         <li class="divider"></li>\
-        <li><a onclick="click_year(4)">4th year</a></li>\
+        <li><a style="background-color:#44619d;" onclick="click_year(4)">4th year</a></li>\
         <li class="divider"></li>\
         </ul>\
         </section>\
@@ -54,9 +54,9 @@
         <section class="top-bar-section">\
         <ul class="left">\
         <li class="divider"></li>\
-        <li><a onclick="click_top()">Top</a></li>\
+        <li><a style="background-color:#44619d;" onclick="click_top()">Top</a></li>\
         <li class="divider"></li>\
-        <li><a onclick="click_recent()">Recent</a></li>\
+        <li><a style="background-color:#44619d;" onclick="click_recent()">Recent</a></li>\
         <li class="divider"></li>\
         </ul>\
         </section>\
