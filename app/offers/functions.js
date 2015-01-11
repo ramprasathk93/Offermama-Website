@@ -54,10 +54,16 @@
         <section class="top-bar-section">\
         <ul class="left">\
         <li class="divider"></li>\
-        <li><a onclick="click_top()">Top</a></li>\
+        <li><a onclick="click_region(0)">All</a></li>\
         <li class="divider"></li>\
-        <li><a onclick="click_recent()">Recent</a></li>\
+        </ul>\
+        <ul class="right">\
         <li class="divider"></li>\
+        <li><a onclick="click_region(1)">Gandhipuram</a></li>\
+        <li class="divider"></li>\
+        <li><a onclick="click_region(2)">Peelamedu</a></li>\
+        <li class="divider"></li>\
+        <li><a onclick="click_region(3)">RS Puram</a></li>\
         </ul>\
         </section>\
         </nav>\
@@ -78,15 +84,15 @@
         }
     }
 //function to find the top offers
-    function click_top(){
+    function click_region(k){
         var cat=$('.active_category').attr('id');
-        click_cat(cat,0);
+        click_cat(cat,k);
     }
 //function to find the most recent offers
-    function click_recent(){
-        var cat=$('.active_category').attr('id');
-        click_cat(cat,1);
-    }
+//    function click_recent(){
+  //      var cat=$('.active_category').attr('id');
+    //    click_cat(cat,1);
+    //}
     function click_year(k){
         $.post('p2p_offers.php',{year:k},function(response){
                $('.wall').html(response);
