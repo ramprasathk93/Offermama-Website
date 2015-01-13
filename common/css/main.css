@@ -11,6 +11,9 @@
    margin-right: auto;
    max-width: initial;
 }
+.signup-panel .button{
+    background-color: purple;
+}
 .tb{
     background-color:#883e93;
 }
