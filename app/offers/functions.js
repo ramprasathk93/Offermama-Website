@@ -31,7 +31,7 @@
         $('#p2p').removeClass('active_category');
         $('#'+id).addClass('active_category');
         var p2p_minbar='<div class"contain-to-grid fixed">\
-        <nav class="top-bar" data-topbar>\
+        <nav class="top-bar tb" data-topbar>\
         <section class="top-bar-section">\
         <ul class="left">\
         <li class="divider"></li>\
@@ -50,7 +50,7 @@
         </nav>\
         </div>';
         var minbar='<div class"contain-to-grid fixed">\
-        <nav class="top-bar" data-topbar>\
+        <nav class="top-bar tb" data-topbar>\
         <section class="top-bar-section">\
         <ul class="left">\
         <li class="divider"></li>\

@@ -15,21 +15,18 @@ if(!strcmp($cat,"home"))
        $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
-                    <div class="small-10 small-uncentered columns">
-                        <div class="row">
-                            <div class="small-6 small-uncentered columns">
-                                <h5>'.$k['name'].'</h5>
-                            </div>
-                            <div class="small-6 small-uncentered columns">
-                                Rating : '.number_format((float)$rating, 1, '.', '').'
-                            </div>
+                    <div class="small-5 small-uncentered columns">
+                        <h5>'.$k['name'].'</h5>
+                    </div>
+                    <div class="small-1 small-uncentered columns">
+                        <div class="rating">'.number_format((float)$rating, 1, '.', '').'
                         </div>
                     </div>
-                    <div class="small-1 small-uncentered columns">
-                        <i class="fa fa-hand-o-up fa-lg" id="recommend" title="Recommend Business"></i>
+                    <div class="small-2 small-uncentered columns">
+                    <a>reccomend</a>
                     </div>
-                    <div class="small-1 small-uncentered columns">
-                        <i class="fa fa-hand-o-down fa-lg" id="unrecommend" title="Unrecommend Business"></i>
+                    <div class="small-3 small-uncentered columns">
+                    </h5><a>unreccomend</a>
                     </div>
                 </div>
                 <div class="row">
