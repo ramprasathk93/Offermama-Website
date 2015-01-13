@@ -10,17 +10,18 @@ if($sort==0){
 if(!strcmp($cat,"home"))
 {
    foreach($conn->query("select * from post_b order by likes_count desc") as $row)
-   {
+   { foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
-                            <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                            <div class="small-6 small-uncentered columns">
+                                <h5>'.$k['name'].'</h5>
                             </div>
-                            <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                            <div class="small-6 small-uncentered columns">
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -39,9 +40,9 @@ if(!strcmp($cat,"home"))
                         '.$row['content'].'
                     </div>
                     <div class="small-2 columns" style="text-align:center;">
-                        <div>M.R.P <strike><font style="">Rs.400</font></strike></div>
+                        <div>M.R.P <strike><font style="">Rs.'.$row['mrp'].'</font></strike></div>
                         <div>
-                            <font style="color:#CC0000;font-size:18px;">Rs.200</font>
+                            <font style="color:#CC0000;font-size:18px;">Rs.'.$row['sp'].'</font>
                             <font style="font-size:10px;">(Selling Price)</font>
                         </div>
                     </div>
@@ -53,12 +54,13 @@ if(!strcmp($cat,"home"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
    }
 }
 else if(!strcmp($cat,"restaurants"))
@@ -68,15 +70,18 @@ else if(!strcmp($cat,"restaurants"))
     foreach($conn->query("select * from post_b where category='restaurants' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -109,13 +114,14 @@ else if(!strcmp($cat,"restaurants"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
-    }
+   }
+}
 }
 else if(!strcmp($cat,"books"))
 {
@@ -124,15 +130,18 @@ else if(!strcmp($cat,"books"))
     foreach($conn->query("select * from post_b where category='books' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -165,12 +174,13 @@ else if(!strcmp($cat,"books"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"transport"))
@@ -180,15 +190,18 @@ else if(!strcmp($cat,"transport"))
     foreach($conn->query("select * from post_b where category='transport' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -221,12 +234,13 @@ else if(!strcmp($cat,"transport"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"cg"))
@@ -236,15 +250,18 @@ else if(!strcmp($cat,"cg"))
     foreach($conn->query("select * from post_b where category='pg' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -277,12 +294,13 @@ else if(!strcmp($cat,"cg"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"p2p"))
@@ -300,15 +318,18 @@ else if($sort==1){
    foreach($conn->query("select * from post_b where area='gandhipuram' order by likes_count desc") as $row)
    {
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -341,12 +362,13 @@ else if($sort==1){
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
    }
 }
 else if(!strcmp($cat,"restaurants"))
@@ -356,15 +378,18 @@ else if(!strcmp($cat,"restaurants"))
     foreach($conn->query("select * from post_b where category='restaurants' and area='gandhipuram' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -397,12 +422,13 @@ else if(!strcmp($cat,"restaurants"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"books"))
@@ -412,15 +438,18 @@ else if(!strcmp($cat,"books"))
     foreach($conn->query("select * from post_b where category='books' and area='gandhipuram' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -453,13 +482,14 @@ else if(!strcmp($cat,"books"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
-    }
+   }
+}
 }
 else if(!strcmp($cat,"transport"))
 {
@@ -468,15 +498,18 @@ else if(!strcmp($cat,"transport"))
     foreach($conn->query("select * from post_b where category='transport' and area='gandhipuram' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -509,12 +542,13 @@ else if(!strcmp($cat,"transport"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"cg"))
@@ -524,15 +558,18 @@ else if(!strcmp($cat,"cg"))
     foreach($conn->query("select * from post_b where category='pg' and area='gandhipuram' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -565,12 +602,13 @@ else if(!strcmp($cat,"cg"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"p2p"))
@@ -588,15 +626,18 @@ else if($sort==2){
    foreach($conn->query("select * from post_b where area='peelamedu' order by likes_count desc") as $row)
    {
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -629,12 +670,13 @@ else if($sort==2){
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
    }
 }
 else if(!strcmp($cat,"restaurants"))
@@ -644,15 +686,18 @@ else if(!strcmp($cat,"restaurants"))
     foreach($conn->query("select * from post_b where category='restaurants' and area='peelamedu' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -685,13 +730,14 @@ else if(!strcmp($cat,"restaurants"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
-    }
+   } 
+}
 }
 else if(!strcmp($cat,"books"))
 {
@@ -700,15 +746,18 @@ else if(!strcmp($cat,"books"))
     foreach($conn->query("select * from post_b where category='books' and area='peelamedu' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -741,12 +790,13 @@ else if(!strcmp($cat,"books"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"transport"))
@@ -756,15 +806,18 @@ else if(!strcmp($cat,"transport"))
     foreach($conn->query("select * from post_b where category='transport' and area='peelamedu' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -797,12 +850,13 @@ else if(!strcmp($cat,"transport"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"cg"))
@@ -812,15 +866,18 @@ else if(!strcmp($cat,"cg"))
     foreach($conn->query("select * from post_b where category='pg' and area='peelamedu' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -853,13 +910,14 @@ else if(!strcmp($cat,"cg"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
-    }
+   }
+}
 }
 else if(!strcmp($cat,"p2p"))
 {
@@ -876,15 +934,18 @@ else if($sort==3){
    foreach($conn->query("select * from post_b where area='rspuram' order by likes_count desc") as $row)
    {
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -917,12 +978,13 @@ else if($sort==3){
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
    }
 }
 else if(!strcmp($cat,"restaurants"))
@@ -932,15 +994,18 @@ else if(!strcmp($cat,"restaurants"))
     foreach($conn->query("select * from post_b where category='restaurants' and area='rspuram' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -973,12 +1038,13 @@ else if(!strcmp($cat,"restaurants"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"books"))
@@ -988,15 +1054,18 @@ else if(!strcmp($cat,"books"))
     foreach($conn->query("select * from post_b where category='books' and area='rspuram' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -1029,12 +1098,13 @@ else if(!strcmp($cat,"books"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"transport"))
@@ -1044,15 +1114,18 @@ else if(!strcmp($cat,"transport"))
     foreach($conn->query("select * from post_b where category='transport' and area='rspuram' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -1085,13 +1158,14 @@ else if(!strcmp($cat,"transport"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
-    }
+   }
+}
 }
 else if(!strcmp($cat,"cg"))
 {
@@ -1100,15 +1174,18 @@ else if(!strcmp($cat,"cg"))
     foreach($conn->query("select * from post_b where category='pg' and area='rspuram' order by likes_count desc") as $row)
     {
         //echo '<div class="panel offer" id="'.$row['post_id'].'"  onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+        foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+       //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
                 <div class="row">
                     <div class="small-10 small-uncentered columns">
                         <div class="row">
                             <div class="small-8 small-uncentered columns">
-                                <h5>The Title of the Company</h5>
+                                <h5>'.$k['name'].'</h5>
                             </div>
                             <div class="small-4 small-uncentered columns">
-                                Rating - 2.65/5
+                                Rating : '.number_format((float)$rating, 1, '.', '').'
                             </div>
                         </div>
                     </div>
@@ -1141,12 +1218,13 @@ else if(!strcmp($cat,"cg"))
                                 <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                10 people liked this
+                                '.$row['likes_count'].' people liked this
                             </div>
                         </div>
                     </div>
                 </div>
             </div>';
+   }
     }
 }
 else if(!strcmp($cat,"p2p"))
