@@ -1,3 +1,7 @@
+<?php
+include_once 'includes/register.inc.php';
+include_once 'includes/functions.php';
+?>
 <html>
 <head>
 <title>Offer Mama</title>
@@ -7,6 +11,8 @@
 <script src="../../common/js/jquery.min.js"></script>
 <script src=functions.js></script>
 <script src="../../common/js/foundation/foundation.js"></script>
+  <script type="text/JavaScript" src="js/sha512.js"></script> 
+        <script type="text/JavaScript" src="js/forms.js"></script>
 </head>
 <body>
 <div class"contain-to-grid fixed">
@@ -43,13 +49,19 @@ Offermama
     <div class="small-4 columns small-centered">
       <div class="signup-panel">
         <p class="welcome"> Welcome to Offermama</p>
-        <form>
+         <?php
+        if (!empty($error_msg)) {
+            echo $error_msg;
+        }
+        ?>
+        <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>"  method="post" 
+                name="registration_form">
           <div class="row collapse">
             <div class="small-2  columns">
               <span class="prefix"><i class="fi-torso-female"></i></span>
             </div>
             <div class="small-10  columns">
-              <input type="text" placeholder="username">
+              <input type="text" name="username" id="username" placeholder="username">
             </div>
           </div>
           <div class="row collapse">
@@ -57,7 +69,7 @@ Offermama
               <span class="prefix"><i class="fi-mail"></i></span>
             </div>
             <div class="small-10  columns">
-              <input type="text" placeholder="email">
+              <input type="text" name="email" id="email" placeholder="email">
             </div>
           </div>
           <div class="row collapse">
@@ -65,11 +77,22 @@ Offermama
               <span class="prefix"><i class="fi-lock"></i></span>
             </div>
             <div class="small-10 columns ">
-              <input type="text" placeholder="password">
+              <input type="password" id="password" name="password" placeholder="password">
             </div>
           </div>
+        <div class="row collapse">
+            <div class="small-2 columns ">
+              <span class="prefix"><i class="fi-lock"></i></span>
+            </div>
+            <div class="small-10 columns ">
+              <input type="password" id="confirmpwd" name="confirmpwd" placeholder="password">
+            </div>
+          </div>
+            <div>
+            <input type="button" value="Register" onclick="return regformhash(this.form,this.form.username,this.form.email,this.form.password,this.form.confirmpwd);" /> 
+            </div>
         </form>
-        <a href="#" class="button ">Sign Up! </a>
+      
          <p>Already have an account? <a href="login.html">Login here &raquo</a></p>
       </div>
     </div>

@@ -1,3 +1,9 @@
+<?php
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+ 
+sec_session_start();
+?>
 <script src="../../common/js/jquery.min.js"></script>
 <html>
 <head>
@@ -89,6 +95,7 @@
 	</script>
 </head>
 <body>
+<?php if (login_check($mysqli) == true) : ?>
 <div class"contain-to-grid fixed">
 <nav class="top-bar" data-topbar>
 <ul class="title-area">
@@ -153,6 +160,11 @@ Offermama
 </form>
 </div>
 </div>
+ <?php else : ?>
+        <p>
+            <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
+        </p>
+        <?php endif; ?>
 </body>
 </html>    
         
