@@ -22,7 +22,7 @@ if(!strcmp($cat,"home"))
                         <div class="rating">'.number_format((float)$rating, 1, '.', '').'
                         </div>
                     </div>
-                    <div class="small-2 small-uncentered columns">
+                    <div class="small-3 small-uncentered columns">
                     <a>reccomend</a>
                     </div>
                     <div class="small-3 small-uncentered columns">
@@ -47,11 +47,11 @@ if(!strcmp($cat,"home"))
                 <div class="row">
                     <div class="small-6 small-uncentered columns">
                         <div class="row">
-                            <div class="small-1 columns">
-                                <i class="fa fa-thumbs-o-up fa-lg" title="Like" style="color:gold;"></i>
+                            <div class="small-3 columns">
+                                <div class="like-button"><a onclick="click_like("'.$row['post_id'].'")">Like</a></div>
                             </div>
                             <div class="small-9 small-uncentered columns">
-                                '.$row['likes_count'].' people liked this
+                                '.$row['likes_count'].' likes
                             </div>
                         </div>
                     </div>
