@@ -10,12 +10,20 @@ if($sort==0){
 if(!strcmp($cat,"home"))
 {
    foreach($conn->query("select * from post_b order by likes_count desc") as $row)
-   { foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
+   {   foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
        $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
        $str='<a onclick=click_like("'.$row['post_id'].'","'.$u_id.'")>Like</a>';
+       $r1='<a onclick=click_reccomend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>reccomend</a>';
+       $r2='<a onclick=click_unreccomend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>unreccomend</a>'
        foreach($conn->query('select * from likes where u_id="'.$u_id.'" and post_id="'.$row['post_id'].'"')as $x){
        $str='<a onclick=click_unlike("'.$row['post_id'].'","'.$u_id.'")>Unlike</a>';
+       }
+       foreach($conn->query('select * from reccomend where u_id="'.$u_id.'" and b_id="'.$row['b_id'].'"') as $x){
+           $r1='<a onclick=click_reccomended("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>reccomended</a>'
+       }
+       foreach($conn->query('select * from unreccomend where u_id="'.$u_id.'" and b_id="'.$row['b_id'].'"') as $x){
+           $r1='<a onclick=click_unreccomended("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>unreccomended</a>'
        }
        
        
@@ -30,10 +38,14 @@ if(!strcmp($cat,"home"))
                         </div>
                     </div>
                     <div class="small-3 small-uncentered columns">
-                    <a>reccomend</a>
+                    <div class="reccomend-button">
+                    '.$r1.'
+                    </div>
                     </div>
                     <div class="small-3 small-uncentered columns">
-                    </h5><a>unreccomend</a>
+                    <div class="unreccomend-button">
+                    '.$r2.'
+                    </div>
                     </div>
                 </div>
                 <div class="row">
