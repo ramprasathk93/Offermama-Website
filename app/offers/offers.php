@@ -39,19 +39,31 @@ if(!strcmp($cat,"home"))
                     </div>
                     <div class="small-2 small-uncentered columns">
                     <div class="recommend-button">
+                    <div id="'.$k['b_id'].'">
                     '.$r1.'
                     </div>
                     </div>
+                    </div>
                     <div class="small-1 small-uncentered columns">
-                    <div class="no-of-recommends">'.$k['recommend'].'</div>
+                    <div class="no-of-recommends">
+                    <div id="'.$k['b_id'].'">
+                    '.$k['recommend'].'
+                    </div>
+                    </div>
                     </div>
                     <div class="small-2 small-uncentered columns">
                     <div class="unrecommend-button">
+                    <div id="'.$k['b_id'].'">
                     '.$r2.'
                     </div>
                     </div>
+                    </div>
                     <div class="small-1 small-uncentered columns">
-                    <div class="no-of-unrecommends">'.$k['unrecommend'].'</div>
+                    <div class="no-of-unrecommends">
+                    <div id="'.$k['b_id'].'">
+                    '.$k['unrecommend'].'
+                    </div>
+                    </div>
                     </div>
                 </div>
                 <div class="row">
