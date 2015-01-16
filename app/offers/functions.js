@@ -10,35 +10,35 @@
     });
 function click_recommend(pid,bid,uid){
     $.post('recommend.php',{'pid':pid,'bid':bid,'uid':uid},function(response){
-        $('#'+pid+' .recommend-button').html(response);
+        $('.recommend-button #'+bid).html(response);
     })
     $.post('recommend-increment.php',{'bid':bid},function(response){
-            $('#'+pid+' .no-of-recommends').html(response);
+            $('.no-of-recommends #'+bid).html(response);
         })
 }
 function click_unrecommend(pid,bid,uid){
     $.post('unrecommend.php',{'pid':pid,'bid':bid,'uid':uid},function(response){
-        $('#'+pid+' .unrecommend-button').html(response);
+        $('.unrecommend-button #'+bid).html(response);
     })
     $.post('unrecommend-increment.php',{'bid':bid},function(response){
-            $('#'+pid+' .no-of-unrecommends').html(response);
+            $('.no-of-unrecommends #'+bid).html(response);
         })
 }
 
 function click_recommended(pid,bid,uid){
     $.post('recommended.php',{'pid':pid,'bid':bid,'uid':uid},function(response){
-        $('#'+pid+' .recommend-button').html(response);
+        $('.recommend-button #'+bid).html(response);
     })
     $.post('recommend-decrement.php',{'bid':bid},function(response){
-            $('#'+pid+' .no-of-recommends').html(response);
+            $('.no-of-recommends #'+bid).html(response);
         })
 }
 function click_unrecommended(pid,bid,uid){
     $.post('unrecommended.php',{'pid':pid,'bid':bid,'uid':uid},function(response){
-        $('#'+pid+' .unrecommend-button').html(response);
+        $('.unrecommend-button #'+bid).html(response);
     })
     $.post('unrecommend-decrement.php',{'bid':bid},function(response){
-            $('#'+pid+' .no-of-unrecommends').html(response);
+            $('.no-of-unrecommends #'+bid).html(response);
         })
 }
 
