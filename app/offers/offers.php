@@ -5,7 +5,7 @@ require_once "../../config/database.php";
 
 $cat=$_POST['cat'];
 $sort=$_POST['sort'];
-
+$u_id='ram11233';
 if($sort==0){
 if(!strcmp($cat,"home"))
 {
@@ -13,7 +13,14 @@ if(!strcmp($cat,"home"))
    { foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
        $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
-       echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>
+       $str='<a onclick=click_like("'.$row['post_id'].'","'.$u_id.'")>Like</a>';
+       foreach($conn->query('select * from likes where u_id="'.$u_id.'" and post_id="'.$row['post_id'].'"')as $x){
+       $str='<a onclick=click_unlike("'.$row['post_id'].'","'.$u_id.'")>Unlike</a>';
+       }
+       
+       
+       
+       echo '<div class="panel offer" id="'.$row['post_id'].'">
                 <div class="row">
                     <div class="small-5 small-uncentered columns">
                         <h5>'.$k['name'].'</h5>
@@ -45,13 +52,18 @@ if(!strcmp($cat,"home"))
                     </div>
                 </div>
                 <div class="row">
-                    <div class="small-6 small-uncentered columns">
+                    <div class="small-12 small-uncentered columns">
                         <div class="row">
                             <div class="small-3 columns">
-                                <div class="like-button"><a onclick="click_like("'.$row['post_id'].'")">Like</a></div>
+                                <div class="like-button">'.$str.'</div>
                             </div>
-                            <div class="small-9 small-uncentered columns">
+                            <div class="small-7 small-uncentered columns">
+                            <div class="no-of-likes">
                                 '.$row['likes_count'].' likes
+                            </div>
+                            </div>
+                            <div class="small-2 small-uncentered columns">
+                            <pre> <a onclick=click_offer("'.$row['post_id'].'")>Expand</a></pre>
                             </div>
                         </div>
                     </div>
