@@ -14,16 +14,16 @@ if(!strcmp($cat,"home"))
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
        $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
        $str='<a onclick=click_like("'.$row['post_id'].'","'.$u_id.'")>Like</a>';
-       $r1='<a onclick=click_reccomend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>reccomend</a>';
-       $r2='<a onclick=click_unreccomend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>unreccomend</a>'
+       $r1='<a onclick=click_recommend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>approve</a>';
+       $r2='<a onclick=click_unrecommend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>disapprove</a>';
        foreach($conn->query('select * from likes where u_id="'.$u_id.'" and post_id="'.$row['post_id'].'"')as $x){
        $str='<a onclick=click_unlike("'.$row['post_id'].'","'.$u_id.'")>Unlike</a>';
        }
-       foreach($conn->query('select * from reccomend where u_id="'.$u_id.'" and b_id="'.$row['b_id'].'"') as $x){
-           $r1='<a onclick=click_reccomended("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>reccomended</a>'
+       foreach($conn->query('select * from recommend where u_id="'.$u_id.'" and b_id="'.$row['b_id'].'"') as $x){
+           $r1='<a onclick=click_recommended("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>approved</a>';
        }
-       foreach($conn->query('select * from unreccomend where u_id="'.$u_id.'" and b_id="'.$row['b_id'].'"') as $x){
-           $r1='<a onclick=click_unreccomended("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>unreccomended</a>'
+       foreach($conn->query('select * from unrecommend where u_id="'.$u_id.'" and b_id="'.$row['b_id'].'"') as $x){
+           $r2='<a onclick=click_unrecommended("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>disapproved</a>';
        }
        
        
@@ -37,15 +37,21 @@ if(!strcmp($cat,"home"))
                         <div class="rating">'.number_format((float)$rating, 1, '.', '').'
                         </div>
                     </div>
-                    <div class="small-3 small-uncentered columns">
-                    <div class="reccomend-button">
+                    <div class="small-2 small-uncentered columns">
+                    <div class="recommend-button">
                     '.$r1.'
                     </div>
                     </div>
-                    <div class="small-3 small-uncentered columns">
-                    <div class="unreccomend-button">
+                    <div class="small-1 small-uncentered columns">
+                    <div class="no-of-recommends">'.$k['recommend'].'</div>
+                    </div>
+                    <div class="small-2 small-uncentered columns">
+                    <div class="unrecommend-button">
                     '.$r2.'
                     </div>
+                    </div>
+                    <div class="small-1 small-uncentered columns">
+                    <div class="no-of-unrecommends">'.$k['unrecommend'].'</div>
                     </div>
                 </div>
                 <div class="row">
