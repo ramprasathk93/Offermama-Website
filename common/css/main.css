@@ -53,19 +53,17 @@
     background-color:#e1e1e1;
 }
 .offer{
-    margin:0;
-}
-.offer:hover{
-	cursor:hand;
-	background-color:#eff6f9;
-}
-.poffer{
+    cursor:default;
     margin:0;
 }
 .poffer:hover{
     cursor:hand;
 	background-color:#eff6f9;
 }
+.poffer{
+    margin:0;
+}
+
 .wall{
 	height:80%;
     overflow-y:auto;

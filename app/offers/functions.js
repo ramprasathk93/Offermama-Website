@@ -8,6 +8,24 @@
         $('.p2p').html(response);
         });
     });
+//function to like a post
+function click_like(pid,uid){
+    	$.post('like.php',{'pid':pid,'uid':uid},function(response){
+            $('#'+pid+' .like-button').html(response);
+        });
+        $.post('like-increment.php',{'pid':pid},function(response){
+            $('#'+pid+' .no-of-likes').html(response);
+        })
+}
+function click_unlike(pid,uid){
+    	$.post('unlike.php',{'pid':pid,'uid':uid},function(response){
+            $('#'+pid+' .like-button').html(response);
+        });
+        $.post('like-decrement.php',{'pid':pid},function(response){
+            $('#'+pid+' .no-of-likes').html(response);
+        })
+}
+
 //funciton to load the  p2p offer details
     function click_poffer(id){
         $.post('load_product_p2p.php',{'id':id},function(response){
