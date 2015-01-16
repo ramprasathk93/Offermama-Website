@@ -8,6 +8,11 @@
         $('.p2p').html(response);
         });
     });
+function click_reccomend(pid,bid,uid){
+    $.post('reccomend.php',{'bid':bid,'uid':uid},function(response){
+        $('#'+pid+' .reccomend-button').html(response);
+    })
+}
 //function to like a post
 function click_like(pid,uid){
     	$.post('like.php',{'pid':pid,'uid':uid},function(response){
@@ -17,6 +22,7 @@ function click_like(pid,uid){
             $('#'+pid+' .no-of-likes').html(response);
         })
 }
+//function to unlike a post
 function click_unlike(pid,uid){
     	$.post('unlike.php',{'pid':pid,'uid':uid},function(response){
             $('#'+pid+' .like-button').html(response);
