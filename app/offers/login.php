@@ -13,12 +13,10 @@ if (login_check($mysqli) == true) {
 <html>
 <head>
 <title>Offer Mama</title>
-<link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
-<script src="../../common/js/jquery.min.js"></script>
-<script src=functions.js></script>
-<script src="../../common/js/foundation/foundation.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
   <script type="text/JavaScript" src="js/sha512.js"></script> 
         <script type="text/JavaScript" src="js/forms.js"></script> 
 </head>
@@ -34,7 +32,7 @@ if (login_check($mysqli) == true) {
  
 <li class="name">
 <h1>
-<a href="home.html">
+<a href="home.php">
 Offermama
 </a>
 </h1>
@@ -45,15 +43,15 @@ Offermama
  
 <ul class="left">
 <li class="divider"></li>
-<li><a href='user_ad.html'>Sell your stuff</a></li>
+<li><a href='user_ad.php'>Sell your stuff</a></li>
 <li class="divider"></li>
 </ul>
  
 <ul class="right">
 <li class="divider"></li>
-<li><a href="register.html">Register</a></li>
+<li><a href="register.php">Register</a></li>
 <li class="divider"></li>
-<li><a href='login.html'>Login</a></li>
+<li><a href='login.php'>Login</a></li>
 </ul>
 </section>
 </nav>
@@ -83,6 +81,9 @@ Offermama
             <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> 
             </div>
         </form>
+        <p>If you don't have a login, please <a href="register.php">register</a></p>
+        <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
+        <p>You are currently logged <?php echo $logged ?>.</p>
         
       </div>
     </div>

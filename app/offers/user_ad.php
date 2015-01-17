@@ -102,7 +102,7 @@ sec_session_start();
  
 <li class="name">
 <h1>
-<a href="home.html">
+<a href="home.php">
 Offermama
 </a>
 </h1>
@@ -113,16 +113,11 @@ Offermama
  
 <ul class="left">
 <li class="divider"></li>
-<li><a href='user_ad.html'>Sell your stuff</a></li>
+<li><a href='user_ad.php'>Sell your stuff</a></li>
 <li class="divider"></li>
 </ul>
  
-<ul class="right">
-<li class="divider"></li>
-<li><a href="register.html">Register</a></li>
-<li class="divider"></li>
-<li><a href='login.html'>Login</a></li>
-</ul>
+
 </section>
 </nav>
 </div>
@@ -162,7 +157,7 @@ Offermama
 </div>
  <?php else : ?>
         <p>
-            <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
+            <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
         </p>
         <?php endif; ?>
 </body>

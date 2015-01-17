@@ -5,12 +5,10 @@ include_once 'includes/functions.php';
 <html>
 <head>
 <title>Offer Mama</title>
-<link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
-<script src="../../common/js/jquery.min.js"></script>
-<script src=functions.js></script>
-<script src="../../common/js/foundation/foundation.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
   <script type="text/JavaScript" src="js/sha512.js"></script> 
         <script type="text/JavaScript" src="js/forms.js"></script>
 </head>
@@ -21,7 +19,7 @@ include_once 'includes/functions.php';
  
 <li class="name">
 <h1>
-<a href="home.html">
+<a href="home.php">
 Offermama
 </a>
 </h1>
@@ -32,15 +30,15 @@ Offermama
  
 <ul class="left">
 <li class="divider"></li>
-<li><a href='user_ad.html'>Sell your stuff</a></li>
+<li><a href='user_ad.php'>Sell your stuff</a></li>
 <li class="divider"></li>
 </ul>
  
 <ul class="right">
 <li class="divider"></li>
-<li><a href="register.html">Register</a></li>
+<li><a href="register.php">Register</a></li>
 <li class="divider"></li>
-<li><a href='login.html'>Login</a></li>
+<li><a href='login.php'>Login</a></li>
 </ul>
 </section>
 </nav>
@@ -54,8 +52,7 @@ Offermama
             echo $error_msg;
         }
         ?>
-        <form action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>"  method="post" 
-                name="registration_form">
+        <form method="post" name="registration_form" action="<?php echo esc_url($_SERVER['PHP_SELF']); ?>">
           <div class="row collapse">
             <div class="small-2  columns">
               <span class="prefix"><i class="fi-torso-female"></i></span>
@@ -85,7 +82,7 @@ Offermama
               <span class="prefix"><i class="fi-lock"></i></span>
             </div>
             <div class="small-10 columns ">
-              <input type="password" id="confirmpwd" name="confirmpwd" placeholder="password">
+              <input type="password" id="confirmpwd" name="confirmpwd" placeholder="confirmpassword">
             </div>
           </div>
             <div>
@@ -93,7 +90,7 @@ Offermama
             </div>
         </form>
       
-         <p>Already have an account? <a href="login.html">Login here &raquo</a></p>
+         <p>Already have an account? <a href="login.php">Login here &raquo</a></p>
       </div>
     </div>
    </div>
