@@ -67,7 +67,10 @@ else if(!strcmp($cat,"p2p"))
 {
       //echo '<div class="mini_taskbar"><div class="o_recent">Recent</div><div class="o_top">Top</div></div>';
     foreach($conn->query("select * from postuser") as $row){
-		echo '<div class="panel poffer" id="'.$row['postid'].'">'.$row['content'].'</div>';
+        foreach($conn->query('select * from user_info where u_id="'.$row['userid'].'"')as $k){
+		//echo '<div class="panel poffer" id="'.$row['postid'].'">'.$row['content'].'</div>';
+            include 'poffer-template.php';
+        }
     }
 	
 }

@@ -68,8 +68,8 @@ function click_unlike(pid,uid){
         })       
     } 
 //fucntion to load the offer details
-    function click_offer(id){
-        $.post('load_product.php',{'id':id},function(response){
+    function click_offer(id,bid){
+        $.post('load_product.php',{'id':id,'bid':bid},function(response){
             $(".p2p").html(response);
         })       
     }  
@@ -136,18 +136,24 @@ function click_unlike(pid,uid){
         });
         }
     }
-//function to find the top offers
+//To categorize by region
     function click_region(k){
         var cat=$('.active_category').attr('id');
         click_cat(cat,k);
     }
-//function to find the most recent offers
-//    function click_recent(){
-  //      var cat=$('.active_category').attr('id');
-    //    click_cat(cat,1);
-    //}
+//To categorize by target market in p2p
     function click_year(k){
         $.post('p2p_offers.php',{year:k},function(response){
                $('.wall').html(response);
                });
+    }
+    function click_poffer(pid){
+        $.post('load_poffer.php',{'pid':pid},function(response){
+            $('.p2p').html(response);
+        })
+    }
+    function click_review(bid){
+        $.post('validate_comment.php',$('#usercomment').serialize(),function(response){
+            $('.comments').html(response);
+        })
     }
