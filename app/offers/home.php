@@ -13,7 +13,6 @@
 <div class"contain-to-grid fixed">
 <nav class="top-bar tb" data-topbar>
 <ul class="title-area">
- 
 <li class="name">
 <h1>
 <a href="home.php">
@@ -27,15 +26,15 @@ Offermama
  
 <ul class="left">
 <li class="divider"></li>
-<li><a href='user_ad.php'>Sell your stuff</a></li>
+<li><a href='user_ad.html'>Sell your stuff</a></li>
 <li class="divider"></li>
 </ul>
  
 <ul class="right">
 <li class="divider"></li>
-<li><a href="register.php">Register</a></li>
+<li><a href="register.html">Register</a></li>
 <li class="divider"></li>
-<li><a href='login.php'>Login</a></li>
+<li><a href='login.html'>Login</a></li>
 </ul>
 </section>
 </nav>
