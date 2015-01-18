@@ -11,7 +11,6 @@
             });
             });
 </script>
-
 <style>
 .product_image{
     height:250;
@@ -25,59 +24,49 @@
 }
 </style>
 <?php
-$q = $_REQUEST['id'];
+$pid = $_POST['id'];
+$bid= $_POST['bid'];
 $servername = "localhost";
 $username = "root";
 $password = "root";
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=offermama", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    foreach($conn->query('select * from post_b where post_id="'.$q.'"') as $row){
+require_once "../../config/database.php";
+
+    foreach($conn->query('select * from post_b where post_id="'.$pid.'"') as $row){
         header("Content-type: image/jpeg");
 		echo '<div class="product" id="'.$row['post_id'].'"><img class="product_image" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/></div>';
         
-	
-    }
-	
 }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
-    
 ?>
-<form name="usercomment" id="usercomment"  action="validate_comment.php" method="post">
+<form name="usercomment" id="usercomment">
         <label class="field" for="comment">Comment:</label>
         <textarea name="content" id="comment_text" rows="3" cols="50" maxlength="140"></textarea>
         <div>
         <div id="textarea_feedback"></div>
-        <input name="comment" type="button" class="box" id="comment_btn" value="comment" >
-        <?php echo '<input name="pid" id="pid" type="hidden" value="'.$q.'">';
+        <input type="button" class="box" value="Review" onclick=click_review("<?php echo $bid?>")>
+        <?php echo '<input name="bid" id="bid" type="hidden" value="'.$bid.'">';
         ?>
         </div>
 </form>
 <br/>
 <div class="comments">
 <?php
-try {
-    
-    foreach($conn->query('select * from comment where post_id="'.$q.'"') as $row){
+foreach($conn->query('select * from review where b_id="'.$bid.'"') as $row){
         foreach($conn->query('select * from user_info where u_id="'.$row['u_id'].'"') as $k){
-        echo '<div class="panel offer" id="'.$row['post_id'].'"><div class="row">';
-        echo '<div class="small-4 small-uncentered columns">'.$k['name'].'</div></div>';
-        echo '<div class="row"><div class="small-12 small-uncentered columns">'.$row['content'].'</div></div>';
-        echo '<div class="row"><div class="small-2 small-uncentered columns"><img src=#/></div>';
-        echo '<div class="small-4 small-uncentered columns">'.$row['likes'].' likes</div></div></div>';
-        
+            echo '<div class="panel offer" id="'.$row['review_id'].'">
+                        <div class="row">
+                            <div class="small-4 small-uncentered columns">
+                            <h6>'.$k['name'].'</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-12 small-uncentered columns">
+                            <p>'.$row['content'].'</p>
+                            </div>
+                        </div>
+                    </div>';
+
     }
 	
 }
-}
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
-
 ?>
 </div>
