@@ -33,7 +33,7 @@ require_once "../../config/database.php";
 
     foreach($conn->query('select * from post_b where post_id="'.$pid.'"') as $row){
         header("Content-type: image/jpeg");
-		echo '<div class="product" id="'.$row['post_id'].'"><img class="product_image" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/></div>';
+		echo '<div class="product" id="'.$row['post_id'].'"><img class="product_image" src="uploads/'.$row['image'].'"/></div>';
         
 }
 ?>
