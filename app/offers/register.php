@@ -85,7 +85,8 @@ Offermama
             </div>
           </div>
             <div>
-            <input type="button" value="Register" onclick="return regformhash(this.form,this.form.username,this.form.email,this.form.password,this.form.confirmpwd);" /> 
+          <!--  <input type="button" value="Register" onclick="return regformhash(this.form,this.form.username,this.form.email,this.form.password,this.form.confirmpwd);" /> -->
+                <button class="box box1" onclick="return regformhash(this.form,this.form.username,this.form.email,this.form.password,this.form.confirmpwd);">Register</button>
             </div>
         </form>
       
