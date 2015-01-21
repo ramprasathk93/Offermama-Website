@@ -1,6 +1,9 @@
    
     <?php
-    $uid='ram11232';
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+sec_session_start();
+    $uid=htmlentities($_SESSION['email']);
     $content=$_POST['content'];
     $checkbox1=$_POST['chk'];
     $mrp=$_POST['mrp'];
