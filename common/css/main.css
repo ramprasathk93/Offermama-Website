@@ -1,3 +1,7 @@
+.box1{
+    background-color:purple;
+    color:white;
+}
 .rating{
     background-color:#883e93;
     color:white;
@@ -55,6 +59,14 @@
 .offer{
     cursor:default;
     margin:0;
+}
+.offer:hover{
+    cursor:hand;
+	background-color:#eff6f9;
+}
+#submit_btn{
+    background-color:purple;
+    color:white;
 }
 .poffer:hover{
     cursor:hand;
