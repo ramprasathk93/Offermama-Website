@@ -11,7 +11,6 @@
             });
             });
 </script>
-
 <style>
 .product_image{
     height:250;
@@ -25,59 +24,58 @@
 }
 </style>
 <?php
-$q = $_REQUEST['id'];
-$servername = "localhost";
-$username = "root";
-$password = "root";
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=offermama", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    foreach($conn->query('select * from post_b where post_id="'.$q.'"') as $row){
-        header("Content-type: image/jpeg");
-		echo '<div class="product" id="'.$row['post_id'].'"><img class="product_image" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"/></div>';
-        
-	
-    }
-	
+require_once "../../config/database.php";
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+sec_session_start();
+if (login_check($mysqli) == true){ 
+$u_id=htmlentities($_SESSION['email']);
 }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
+else {
+    $u_id='unknown';
+}
+$pid = $_POST['id'];
+$bid= $_POST['bid'];
+
+require_once "../../config/database.php";
+
+    foreach($conn->query('select * from post_b where post_id="'.$pid.'"') as $row){
+		echo '<div class="product" id="'.$row['post_id'].'"><img class="product_image" src="uploads/'.$row['image'].'"/></div>';
+        
     }
-    
 ?>
-<form name="usercomment" id="usercomment"  action="validate_comment.php" method="post">
+<div id="enter-comment">
+<form name="usercomment" id="usercomment">
         <label class="field" for="comment">Comment:</label>
         <textarea name="content" id="comment_text" rows="3" cols="50" maxlength="140"></textarea>
         <div>
         <div id="textarea_feedback"></div>
-        <input name="comment" type="button" class="box" id="comment_btn" value="comment" >
-        <?php echo '<input name="pid" id="pid" type="hidden" value="'.$q.'">';
+        <input type="button" class="box" value="Review" onclick=click_review("<?php echo $bid?>","<?php echo $u_id?>")>
+        <?php echo '<input name="bid" id="bid" type="hidden" value="'.$bid.'">';
         ?>
         </div>
 </form>
+</div>
 <br/>
 <div class="comments">
 <?php
-try {
-    
-    foreach($conn->query('select * from comment where post_id="'.$q.'"') as $row){
+foreach($conn->query('select * from review where b_id="'.$bid.'" order by time desc') as $row){
         foreach($conn->query('select * from user_info where u_id="'.$row['u_id'].'"') as $k){
-        echo '<div class="panel offer" id="'.$row['post_id'].'"><div class="row">';
-        echo '<div class="small-4 small-uncentered columns">'.$k['name'].'</div></div>';
-        echo '<div class="row"><div class="small-12 small-uncentered columns">'.$row['content'].'</div></div>';
-        echo '<div class="row"><div class="small-2 small-uncentered columns"><img src=#/></div>';
-        echo '<div class="small-4 small-uncentered columns">'.$row['likes'].' likes</div></div></div>';
-        
+            echo '<div class="panel offer" id="'.$row['review_id'].'">
+                        <div class="row">
+                            <div class="small-4 small-uncentered columns">
+                            <font style="font-weight:bold;">'.$k['name'].'</font>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-12 small-uncentered columns">
+                            <p>'.$row['content'].'</p>
+                            </div>
+                        </div>
+                    </div>';
+
     }
 	
 }
-}
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
-
 ?>
 </div>

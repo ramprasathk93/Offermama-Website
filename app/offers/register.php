@@ -14,9 +14,8 @@ include_once 'includes/functions.php';
 </head>
 <body>
 <div class"contain-to-grid fixed">
-<nav class="top-bar" data-topbar>
+<nav class="top-bar tb" data-topbar>
 <ul class="title-area">
- 
 <li class="name">
 <h1>
 <a href="home.php">
@@ -86,7 +85,8 @@ Offermama
             </div>
           </div>
             <div>
-            <input type="button" value="Register" onclick="return regformhash(this.form,this.form.username,this.form.email,this.form.password,this.form.confirmpwd);" /> 
+          <!--  <input type="button" value="Register" onclick="return regformhash(this.form,this.form.username,this.form.email,this.form.password,this.form.confirmpwd);" /> -->
+                <button class="box box1" onclick="return regformhash(this.form,this.form.username,this.form.email,this.form.password,this.form.confirmpwd);">Register</button>
             </div>
         </form>
       
