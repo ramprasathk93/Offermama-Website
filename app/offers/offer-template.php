@@ -1,5 +1,11 @@
 <?php
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
+if (login_check($mysqli) == true){ 
+$u_id=htmlentities($_SESSION['email']);
+}
+else {
+    $u_id='unknown';
+}
        $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
        $str='<a onclick=click_like("'.$row['post_id'].'","'.$u_id.'")>Like</a>';
        $r1='<a onclick=click_recommend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>approve</a>';
@@ -54,23 +60,27 @@
                     </div>
                     </div>
                 </div>
+                <span>
                 <div class="row">
-                    <div class="small-2 columns" style="width:100;height:100;">
+                    <div class="small-2 columns" style="width:100;height:50;">
                         <img src="uploads/20140926_095434.jpg">
                     </div>
                     <div class="small-8 small-uncentered columns">
+                        <font style="font-size:14px;">
                         '.$row['content'].'
+                        </font>
                     </div>
                     <div class="small-2 columns" style="text-align:center;">
-                        <div>M.R.P <strike><font style="">Rs.'.$row['mrp'].'</font></strike></div>
+                        <div><strike><font style="font-size:14px;">Rs.'.$row['mrp'].'</font></strike></div>
                         <div class="row">
-                            <font style="color:#CC0000;font-size:18px;">Rs.'.$row['sp'].'</font>
+                            <font style="color:#CC0000;font-size:16px;">Rs.'.$row['sp'].'</font>
                         </div>
                         <div class="row">
                             <font style="font-size:10px;">(Selling Price)</font>
                         </div>
                     </div>
                 </div>
+                </span>
                 <div class="row">
                     <div class="small-12 small-uncentered columns">
                         <div class="row">
@@ -79,7 +89,7 @@
                             </div>
                             <div class="small-7 small-uncentered columns">
                             <div class="no-of-likes">
-                                '.$row['likes_count'].' likes
+                            '.$row['likes_count'].' likes
                             </div>
                             </div>
                         </div>

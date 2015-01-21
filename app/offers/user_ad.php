@@ -97,7 +97,7 @@ sec_session_start();
 <body>
 <?php if (login_check($mysqli) == true) : ?>
 <div class"contain-to-grid fixed">
-<nav class="top-bar" data-topbar>
+<nav class="top-bar tb" data-topbar>
 <ul class="title-area">
  
 <li class="name">
@@ -113,11 +113,16 @@ Offermama
  
 <ul class="left">
 <li class="divider"></li>
-<li><a href='user_ad.php'>Sell your stuff</a></li>
+<li><a href='user_ad.html'>Sell your stuff</a></li>
 <li class="divider"></li>
 </ul>
  
-
+<ul class="right">
+<li class="divider"></li>
+<li><a href="register.html">Register</a></li>
+<li class="divider"></li>
+<li><a href='login.html'>Login</a></li>
+</ul>
 </section>
 </nav>
 </div>
@@ -132,30 +137,39 @@ Offermama
 </div>
 <div id="textarea_feedback"></div><br>
 <div class="row">
-<div class="small-6 columns">
-<label class="field" for="image">Upload a image:</label>
-<input name="fileToUpload" type="file" id="fileToUpload">
-      
-</div>
+    <div class="small-6 columns">
+    <label class="field" for="image">Upload a image:</label>
+    <input name="fileToUpload" type="file" id="fileToUpload">
+    </div>
+    <div class="small-6 columns">
     <span id="progress" class="progress">0%</span>
     </div>
-<div class="row">
-<div class="small-6 small-uncentered columns">
-<label class="field" for="target" size="20">Target Market:</label><br>
-<input type="radio" name="chk" value="all" id="group1">All<br>
-<input type="radio" name="chk" value="firstyr" class="group1">First year Students<br>
-<input type="radio" name="chk" value="secondyr" class="group1">Second year Students<br>
-<input type="radio" name="chk" value="thirdyr" class="group1">Third year Students<br>
-<input type="radio" name="chk" value="fourthyr" class="group1">Final year Students<br>
-<input type="radio" name="chk" value="staff" class="group1">Staff/Others<br>
-<!--<input name="upload" type="submit" class="box" id="upload" value="Upload" >-->
-<button class="box" id="submit_btn" >Submit</button>
 </div>
+<div class="row">
+    <div class="small-3 small-uncentered columns">
+        <label class="field" for="target" size="20">Category:</label><br>
+        <input type="radio" name="chk" value="abooks" id="group1">Academic Books<br>
+        <input type="radio" name="chk" value="firstyr" class="group1">First-year related<br/>
+        <input type="radio" name="chk" value="novels" class="group1">Novels<br/>
+        <input type="radio" name="chk" value="cycles" class="group1">Cycles<br/>
+        <input type="radio" name="chk" value="electronics" class="group1">Electronics<br/>
+        <input type="radio" name="chk" value="others" class="group1">Others<br/>
+        <!--<input name="upload" type="submit" class="box" id="upload" value="Upload" >-->
+        <button class="box" id="submit_btn" >Submit</button>
+    </div>
+    <div class="small-1 small-uncentered columns">
+        <div class="row">
+        <label>MRP</label><input type="number" name="mrp" value=0>    
+        </div>
+        <div class="row">
+        <label>SP</label><input type="number" name="sp" value=0>
+        </div>
+    </div>
 </div>
 </form>
 </div>
 </div>
- <?php else : ?>
+<?php else : ?>
         <p>
             <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
         </p>

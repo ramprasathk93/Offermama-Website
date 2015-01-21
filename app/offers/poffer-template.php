@@ -7,16 +7,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="small-2 columns" style="width:100;height:100;">
+                    <div class="small-2 columns" style="width:100;height:50;">
                         <img src="uploads/20140926_095434.jpg">
                     </div>
                     <div class="small-8 small-uncentered columns">
-                        '.$row['content'].'
+                    <font style="font-size:12px;">'.$row['content'].'</font>
                     </div>
                     <div class="small-2 columns" style="text-align:center;">
-                        <div>M.R.P <strike><font style="">Rs.'.$row['mrp'].'</font></strike></div>
+                        <div><strike><font style="font-size:12px;">Rs.'.$row['mrp'].'</font></strike></div>
                         <div class="row">
-                            <font style="color:#CC0000;font-size:18px;">Rs.'.$row['sp'].'</font>
+                            <font style="color:#CC0000;font-size:14px;">Rs.'.$row['sp'].'</font>
                         </div>
                         <div class="row">
                             <font style="font-size:10px;">(Selling Price)</font>
