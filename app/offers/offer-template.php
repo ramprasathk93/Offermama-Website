@@ -1,11 +1,5 @@
 <?php
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-if (login_check($mysqli) == true){ 
-$u_id=htmlentities($_SESSION['email']);
-}
-else {
-    $u_id='unknown';
-}
        $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
        $str='<a onclick=click_like("'.$row['post_id'].'","'.$u_id.'")>Like</a>';
        $r1='<a onclick=click_recommend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>approve</a>';
@@ -28,7 +22,7 @@ else {
                         <h5>'.$k['name'].'</h5>
                     </div>
                     <div class="small-1 small-uncentered columns">
-                        <div class="rating">'.number_format((float)$rating, 1, '.', '').'
+                      <div class="rating">'.number_format((float)$rating, 1, '.', '').'
                         </div>
                     </div>
                     <div class="small-2 small-uncentered columns">

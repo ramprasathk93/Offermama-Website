@@ -15,6 +15,7 @@ sec_session_start();
 <script src="../../common/js/foundation/foundation.js"></script>
 </head>
 <body>
+<?php if (login_check($mysqli) == true) : ?>
 <div class"contain-to-grid fixed">
 <nav class="top-bar tb" data-topbar>
 <ul class="title-area">
@@ -36,6 +37,8 @@ Offermama
 </ul>
  
 <ul class="right">
+<li class="divider"></li>
+<li><a href="profile.php">Profile</a></li>
 <li class="divider"></li>
 <li><a href="register.php">Register</a></li>
 <li class="divider"></li>
@@ -71,5 +74,10 @@ Offermama
         </div>
     </div>
 </div>
+<?php else : ?>
+        <p>
+            <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
+        </p>
+        <?php endif; ?>
 </body>
 </html>

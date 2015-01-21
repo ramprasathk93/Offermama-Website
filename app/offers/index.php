@@ -15,7 +15,7 @@
 <ul class="title-area">
 <li class="name">
 <h1>
-<a href="home.php">
+<a href="index.php">
 Offermama
 </a>
 </h1>
@@ -62,7 +62,6 @@ Offermama
     </div>
     <div class="small-6 large-4 columns">
         <div class="p2p">
-            <p>p2p</p>
         </div>
     </div>
 </div>
