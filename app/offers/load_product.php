@@ -64,7 +64,7 @@ foreach($conn->query('select * from review where b_id="'.$bid.'" order by time d
             echo '<div class="panel offer" id="'.$row['review_id'].'">
                         <div class="row">
                             <div class="small-4 small-uncentered columns">
-                            <h6>'.$k['name'].'</h6>
+                            <font style="font-weight:bold;">'.$k['name'].'</font>
                             </div>
                         </div>
                         <div class="row">

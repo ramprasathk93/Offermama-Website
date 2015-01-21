@@ -78,7 +78,7 @@ Offermama
           </div>
           <div>
            <!-- <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> -->
-              <button class="box" onclick="formhash(this.form,this.form.password);">Submit</button>
+              <button class="box box1" onclick="formhash(this.form,this.form.password);">Submit</button>
             </div>
         </form>
         <p>If you don't have a login, please <a href="register.php">register</a></p>
