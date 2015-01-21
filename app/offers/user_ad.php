@@ -121,7 +121,7 @@ Offermama
 <li class="divider"></li>
 <li><a href="register.html">Register</a></li>
 <li class="divider"></li>
-<li><a href='login.html'>Login</a></li>
+<li><a href='includes/logout.php'>Logout</a></li>
 </ul>
 </section>
 </nav>

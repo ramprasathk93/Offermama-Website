@@ -14,9 +14,8 @@ include_once 'includes/functions.php';
 </head>
 <body>
 <div class"contain-to-grid fixed">
-<nav class="top-bar" data-topbar>
+<nav class="top-bar tb" data-topbar>
 <ul class="title-area">
- 
 <li class="name">
 <h1>
 <a href="home.php">

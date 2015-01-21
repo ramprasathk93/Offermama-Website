@@ -186,8 +186,16 @@ function click_unlike(pid,uid){
             $('.p2p').html(response);
         })
     }
-    function click_review(bid){
+    function click_review(bid,uid){
+        if(!uid.localeCompare('unknown')){
+            alert('Not logged in');
+        }
+        else{
+        $.post('load_comment.php',{'bid':bid,'uid':uid},function(response){
+            $('#enter-comment').html(response);
+        })
         $.post('validate_comment.php',$('#usercomment').serialize(),function(response){
             $('.comments').html(response);
         })
+        }
     }
