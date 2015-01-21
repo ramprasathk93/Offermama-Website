@@ -73,16 +73,21 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
         $password = hash('sha512', $password . $random_salt);
 
         // Insert the new user into the database 
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, password, salt) VALUES (?, ?, ?, ?)")) {
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, password, salt) VALUES (?, ?, ?, ?)"))         {
             $insert_stmt->bind_param('ssss', $username, $email, $password, $random_salt);
-            // Execute the prepared query.
+            $user_stmt = $mysqli->prepare("INSERT INTO user_info(u_id,name) VALUES (?, ?)"); 
+            $user_stmt->bind_param('ss',$email,$username);
+            $user_stmt->execute();
             if (! $insert_stmt->execute()) {
                 header('Location: ../error.php?err=Registration failure: INSERT');
                 exit();
             }
         }
-        header('Location: ./register_success.php');
+          header('Location: ./register_success.php');
         exit();
-    }
+            }
+  
+
 }
+                
 ?>
