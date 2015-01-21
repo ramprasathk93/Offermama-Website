@@ -1,6 +1,15 @@
 <?php
 require_once '../../config/database.php';
-$uid='ram11233';
+require_once "../../config/database.php";
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+sec_session_start();
+if (login_check($mysqli) == true){ 
+$uid=htmlentities($_SESSION['email']);
+}
+else {
+    $uid='unknown';
+}
 $content=$_POST['content'];
 $bid=$_POST['bid'];
 $micro_date = microtime();
@@ -13,25 +22,20 @@ $stmt->bindParam(':bid', $bid);
 $stmt->bindParam(':content', $content);
 $stmt->bindParam(':rid',$rid);
 $stmt->execute();
-foreach($conn->query('select * from review where b_id="'.$bid.'"') as $row){
+foreach($conn->query('select * from review where b_id="'.$bid.'" order by time desc') as $row){
         foreach($conn->query('select * from user_info where u_id="'.$row['u_id'].'"') as $k){
             echo '<div class="panel offer" id="'.$row['review_id'].'">
-                    <div class="row">
-                        <div class="small-4 small-uncentered columns">
-                        '.$k['name'].'
+                        <div class="row">
+                            <div class="small-4 small-uncentered columns">
+                            <h6>'.$k['name'].'</h6>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 small-uncentered columns">
-                        '.$row['content'].'
+                        <div class="row">
+                            <div class="small-12 small-uncentered columns">
+                            <p>'.$row['content'].'</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-4 small-uncentered columns">
-                        '.$row['likes'].' likes
-                         </div>
-                    </div>
-                  </div>';
+                    </div>';
 
     }
 	
