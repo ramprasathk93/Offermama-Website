@@ -34,30 +34,7 @@ sec_session_start();
         float:right;
         
         }
-    .progress {
-			width:0%;
-			overflow:hidden;
-			height:40px;
-			display:inline-block;
-			vertical-align:middle;
-			color:#FFF;
-			text-align:right;
-			text-shadow:1px 1px 0 #000;
-			background:-o-linear-gradient(top,#888888,#333333);
-			background:-moz-linear-gradient(top,#888888,#333333);
-			background:-webkit-gradient(linear,left top,left bottom,from(#888888),to(#333333));
-			background:-webkit-linear-gradient(top,#888888,#333333);
-			-o-transition-property:width;
-			-o-transition-duration:.5s;
-			-moz-transition-property:width;
-			-moz-transition-duration:.5s;
-			-webkit-transition-property:width;
-			-webkit-transition-duration:.5s;
-		}
-  
-    }
-        
- </style>
+</style>
 <link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
@@ -75,24 +52,6 @@ sec_session_start();
             });
             });
 </script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-	<script type="text/javascript" src="./uploader.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			var $b = $('#submit_btn'),
-				$f = $('#file'),
-				$p = $('#progress'),
-				up = new uploader($f.get(0), {
-					url:'/',
-					progress:function(ev){ console.log('progress'); $p.html(((ev.loaded/ev.total)*100)+'%'); $p.css('width',$p.html()); },
-					error:function(ev){ console.log('error'); },
-					success:function(data){ console.log('success'); $p.html('100%'); $p.css('width',$p.html()); }
-				});
-			$b.click(function(){
-				up.send();
-			});
-		});
-	</script>
 </head>
 <body>
 <?php if (login_check($mysqli) == true) : ?>
@@ -113,13 +72,13 @@ Offermama
  
 <ul class="left">
 <li class="divider"></li>
-<li><a href='user_ad.html'>Sell your stuff</a></li>
+<li><a href='user_ad.php'>Sell your stuff</a></li>
 <li class="divider"></li>
 </ul>
  
 <ul class="right">
 <li class="divider"></li>
-<li><a href="register.html">Register</a></li>
+<li><a href="register.php">Register</a></li>
 <li class="divider"></li>
 <li><a href='includes/logout.php'>Logout</a></li>
 </ul>
@@ -141,9 +100,6 @@ Offermama
     <label class="field" for="image">Upload a image:</label>
     <input name="fileToUpload" type="file" id="fileToUpload">
     </div>
-    <div class="small-6 columns">
-    <span id="progress" class="progress">0%</span>
-    </div>
 </div>
 <div class="row">
     <div class="small-3 small-uncentered columns">
@@ -155,7 +111,7 @@ Offermama
         <input type="radio" name="chk" value="electronics" class="group1">Electronics<br/>
         <input type="radio" name="chk" value="others" class="group1">Others<br/>
         <!--<input name="upload" type="submit" class="box" id="upload" value="Upload" >-->
-        <button class="box" id="submit_btn" >Submit</button>
+        <button class="box" id="submit_btn" onclick=check_empty()>Submit</button>
     </div>
     <div class="small-1 small-uncentered columns">
         <div class="row">

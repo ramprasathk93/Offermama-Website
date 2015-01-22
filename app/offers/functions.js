@@ -190,6 +190,10 @@ function click_unlike(pid,uid){
         if(!uid.localeCompare('unknown')){
             alert('Not logged in');
         }
+        if ( $('#comment_text').is(':empty') )
+    {
+        alert('Please type a review');
+    }
         else{
         $.post('load_comment.php',{'bid':bid,'uid':uid},function(response){
             $('#enter-comment').html(response);
@@ -199,3 +203,10 @@ function click_unlike(pid,uid){
         })
         }
     }
+ function check_empty()
+{
+ if ( $('#textarea').is(':empty') )
+    {
+        alert('Cannot post empty content');
+    }
+}
