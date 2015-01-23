@@ -188,10 +188,11 @@ function click_unlike(pid,uid){
     }
     function click_review(bid,uid){
         chk_empty();
+        
         if(!uid.localeCompare('unknown')){
             alert('Not logged in');
         }
-        else{
+else{
         $.post('load_comment.php',{'bid':bid,'uid':uid},function(response){
             $('#enter-comment').html(response);
         })

@@ -28,7 +28,7 @@ $date = date("is",$date_array[1]);
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";}
     $file = basename($target_file);
-    $imgname="pu".$date.$file;
+    $imgname="pu".$date;
     //if(isset($_POST['upload'])){
     try {
     $conn = new PDO("mysql:host=$servername;dbname=offermama", $username, $password);
