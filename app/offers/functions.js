@@ -187,13 +187,10 @@ function click_unlike(pid,uid){
         })
     }
     function click_review(bid,uid){
+        chk_empty();
         if(!uid.localeCompare('unknown')){
             alert('Not logged in');
         }
-        if ( $('#comment_text').is(':empty') )
-    {
-        alert('Please type a review');
-    }
         else{
         $.post('load_comment.php',{'bid':bid,'uid':uid},function(response){
             $('#enter-comment').html(response);
@@ -203,10 +200,9 @@ function click_unlike(pid,uid){
         })
         }
     }
- function check_empty()
-{
- if ( $('#textarea').is(':empty') )
+    function chk_empty(){
+    if ( $('#comment_text').val()=='' && ($('#comment_text').val().trim().length == 0) )
     {
-        alert('Cannot post empty content');
+        alert('Please type a review');
     }
-}
+    }
