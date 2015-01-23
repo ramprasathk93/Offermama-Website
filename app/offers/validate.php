@@ -2,6 +2,7 @@
     <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
+include_once '../../config/database.php';
 sec_session_start();
     $uid=htmlentities($_SESSION['email']);
     $content=$_POST['content'];
@@ -9,9 +10,7 @@ sec_session_start();
     $checkbox1=$_POST['chk'];
     $mrp=$_POST['mrp'];
     $sp=$_POST['sp'];
-    $servername='localhost';
-    $username='root';
-    $password='root';
+    
 //------------------------------------------------------------------------------------------------------------
     //Getting current time
 $micro_date = microtime();
@@ -30,10 +29,7 @@ $date = date("is",$date_array[1]);
     $file = basename($target_file);
     $imgname="pu".$date;
     //if(isset($_POST['upload'])){
-    try {
-    $conn = new PDO("mysql:host=$servername;dbname=offermama", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
 	$stmt = $conn->prepare("insert into postuser(userid,postid,content,imgname,target,mrp,sp) VALUES (:userid,:postid,:content,:imgname,:target,:mrp,:sp)");
    $stmt->bindParam(':userid', $uid);
     $stmt->bindParam(':postid', $imgname);
@@ -44,11 +40,6 @@ $date = date("is",$date_array[1]);
     $stmt->bindParam(':sp',$sp);
     $stmt->execute();
             echo "Upload Successful!";
-   }
-	catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
     
 //    }
 echo '<a href="home.php">Home Page</a>';
