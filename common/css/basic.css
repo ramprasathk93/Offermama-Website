@@ -1,0 +1,150 @@
+body{
+	background-color:#E9EAED;
+    padding-top: 70px; 
+}
+.taskbar{
+	height:70;
+	background-color:#8ec1da;
+	border-radius:15;
+}
+.mini_taskbar{
+	height:30;
+	background-color:#8ec1da;
+	border-radius:15;
+}
+.home{
+    float:left;
+    text-align:center;
+    padding:20;
+    padding-bottom:30;
+    border-radius:15;
+}
+.home:hover{
+    cursor:hand;
+    background-color:#4da7d1;
+}
+.tlog{
+	float:right;
+	text-align:center;
+	padding:20;
+	padding-bottom:30;
+	border-radius:15;
+}
+.tlog:hover{
+	cursor:hand;
+	background-color:#4da7d1;
+	
+}
+.treg{
+	float:right;
+	text-align:center;
+	padding:20;
+	padding-bottom:30;
+	border-radius:15;
+}
+.treg:hover{
+	cursor:hand;
+	background-color:#4da7d1;
+}
+.o_recent,.res_recent,.books_recent,.pg_recent,.trans_recent{
+	float:right;
+	text-align:center;
+	padding:10;
+	padding-bottom:5;
+	border-radius:15;
+}
+.o_recent:hover,.res_recent:hover,.books_recent:hover,.pg_recent:hover,.trans_recent:hover{
+	cursor:hand;
+	background-color:#4da7d1;
+	
+}
+.o_top,.res_top,.books_top,.pg_top,.trans_top{
+	float:right;
+	text-align:center;
+	padding:10;
+	padding-bottom:5;
+	border-radius:15;
+}
+.o_top:hover,.res_top:hover,.books_top:hover,.pg_top:hover,.trans_top:hover{
+	cursor:hand;
+	background-color:#4da7d1;
+	
+}
+.sell{
+	float:left;
+	text-align:center;
+	padding:10;
+	padding-bottom:5;
+	border-radius:15;
+}
+.sell:hover{
+	cursor:hand;
+	background-color:#4da7d1;
+	
+}
+.maincategory{
+	margin-top:20;
+	float:left;
+	width:14.5%;
+	margin-left:4.5%;
+	background-color:#cbe5f2;
+	border-radius:15;
+	
+}
+.category:Hover{
+	text-align:center;
+	background-color:#b5d6e5;
+	cursor:hand;
+	padding:10;
+	border-radius:15;
+}
+.category{
+	text-align:center;
+	background-color:#cbe5f2;
+	padding:10;
+	border-radius:15;
+}
+.wall{
+	margin-top:20;
+	float:left;
+	margin-left:2.1%;
+	width:43%;
+	height:500;
+    overflow-y:auto;
+	background-color:WHITE;
+	border-radius:15;
+}
+.p2p{
+	margin-top:20;
+	float:left;
+	margin-left:2.1%;
+	width:29%;
+	height:500;
+    overflow-y:auto;
+	background-color:WHITE;
+	border-radius:15;
+}
+.offer{
+	padding-top:40;
+	padding-bottom:40;
+	text-align:center;
+	background-color:white;
+	border-bottom:medium #e5f3f9;
+	border-bottom-style:solid;
+}
+.offer:hover{
+	cursor:hand;
+	background-color:#eff6f9;
+}
+.poffer{
+	padding-top:40;
+	padding-bottom:40;
+	text-align:center;
+	background-color:white;
+	border-bottom:medium #e5f3f9;
+	border-bottom-style:solid;
+}
+.poffer:hover{
+	cursor:hand;
+	background-color:#eff6f9;
+}
