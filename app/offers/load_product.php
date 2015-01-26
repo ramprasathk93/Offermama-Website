@@ -24,38 +24,47 @@
 }
 </style>
 <?php
+require_once "../../config/database.php";
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+sec_session_start();
+if (login_check($mysqli) == true){ 
+$u_id=htmlentities($_SESSION['email']);
+}
+else {
+    $u_id='unknown';
+}
 $pid = $_POST['id'];
 $bid= $_POST['bid'];
-$servername = "localhost";
-$username = "root";
-$password = "root";
+
 require_once "../../config/database.php";
 
     foreach($conn->query('select * from post_b where post_id="'.$pid.'"') as $row){
-        header("Content-type: image/jpeg");
 		echo '<div class="product" id="'.$row['post_id'].'"><img class="product_image" src="uploads/'.$row['image'].'"/></div>';
         
-}
+    }
 ?>
+<div id="enter-comment">
 <form name="usercomment" id="usercomment">
         <label class="field" for="comment">Comment:</label>
         <textarea name="content" id="comment_text" rows="3" cols="50" maxlength="140"></textarea>
         <div>
         <div id="textarea_feedback"></div>
-        <input type="button" class="box" value="Review" onclick=click_review("<?php echo $bid?>")>
+        <input type="button" class="box" value="Review" onclick=click_review("<?php echo $bid?>","<?php echo $u_id?>");>
         <?php echo '<input name="bid" id="bid" type="hidden" value="'.$bid.'">';
         ?>
         </div>
 </form>
+</div>
 <br/>
 <div class="comments">
 <?php
-foreach($conn->query('select * from review where b_id="'.$bid.'"') as $row){
+foreach($conn->query('select * from review where b_id="'.$bid.'" order by time desc') as $row){
         foreach($conn->query('select * from user_info where u_id="'.$row['u_id'].'"') as $k){
             echo '<div class="panel offer" id="'.$row['review_id'].'">
                         <div class="row">
                             <div class="small-4 small-uncentered columns">
-                            <h6>'.$k['name'].'</h6>
+                            <font style="font-weight:bold;">'.$k['name'].'</font>
                             </div>
                         </div>
                         <div class="row">

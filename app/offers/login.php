@@ -27,12 +27,11 @@ if (login_check($mysqli) == true) {
         }
         ?> 
 <div class"contain-to-grid fixed">
-<nav class="top-bar" data-topbar>
+<nav class="top-bar tb" data-topbar>
 <ul class="title-area">
- 
 <li class="name">
 <h1>
-<a href="home.php">
+<a href="index.php">
 Offermama
 </a>
 </h1>
@@ -78,7 +77,8 @@ Offermama
             </div>
           </div>
           <div>
-            <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> 
+           <!-- <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> -->
+              <button class="box box1" onclick="formhash(this.form,this.form.password);">Submit</button>
             </div>
         </form>
         <p>If you don't have a login, please <a href="register.php">register</a></p>

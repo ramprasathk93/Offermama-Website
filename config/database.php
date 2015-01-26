@@ -2,8 +2,8 @@
 
 //database configurations
 $servername = "localhost";
-$username = "root";
-$password = "root";
+$username = "primary_user";
+$password = "BZtpxSf5pUxZTMWR";
 $dbname = "offermama";
 
 //try to connect to database

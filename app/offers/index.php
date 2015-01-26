@@ -1,8 +1,3 @@
-<?php
-include_once 'includes/db_connect.php';
-include_once 'includes/functions.php';
-sec_session_start();
-?>
 <html>
 <head>
 <title>Offer Mama</title>
@@ -15,13 +10,12 @@ sec_session_start();
 <script src="../../common/js/foundation/foundation.js"></script>
 </head>
 <body>
-<?php if (login_check($mysqli) == true) : ?>
 <div class"contain-to-grid fixed">
 <nav class="top-bar tb" data-topbar>
 <ul class="title-area">
 <li class="name">
 <h1>
-<a href="home.php">
+<a href="index.php">
 Offermama
 </a>
 </h1>
@@ -38,11 +32,9 @@ Offermama
  
 <ul class="right">
 <li class="divider"></li>
-<li><a href="profile.php">Profile</a></li>
-<li class="divider"></li>
 <li><a href="register.php">Register</a></li>
 <li class="divider"></li>
-<li><a href='includes/logout.php'>Logout</a></li>
+<li><a href='login.php'>Login</a></li>
 </ul>
 </section>
 </nav>
@@ -51,7 +43,7 @@ Offermama
 <div class="row">
     <div class="small-12 large-2 small-uncentered columns small-12 maincategory">
          <dl class="tabs pill vertical">
-            <dd><a id="restaurants" onclick=click_cat("restaurants",0)>Restaurants</a></dd>
+          <dd><a id="restaurants" onclick=click_cat("restaurants",0)>Restaurants</a></dd>
             <dd><a id="grooming" onclick=click_cat("grooming",0)>Grooming/Optics</a></dd>
             <dd><a id="transport" onclick=click_cat("transport",0)>Cabs/Tours</a></dd>
             <dd><a id="cg" onclick=click_cat("cg",0)>Cakes/Gifts</a></dd>
@@ -70,14 +62,8 @@ Offermama
     </div>
     <div class="small-6 large-4 columns">
         <div class="p2p">
-            <p>p2p</p>
         </div>
     </div>
 </div>
-<?php else : ?>
-        <p>
-            <span class="error">You are not authorized to access this page.</span> Please <a href="login.php">login</a>.
-        </p>
-        <?php endif; ?>
 </body>
 </html>

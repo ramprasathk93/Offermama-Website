@@ -1,6 +1,12 @@
+.box1{
+    background-color:purple;
+    color:white;
+}
 .rating{
     background-color:#883e93;
     color:white;
+    width:25px;
+    height:25px;
     padding:1px;
     font-size:14px;
     border-radius:3px;
@@ -73,6 +79,12 @@
 }
 
 .wall{
+	height:80%;
+    overflow-y:auto;
+	background-color:WHITE;
+    border-radius:5px;
+}
+.wall1{
 	height:80%;
     overflow-y:auto;
 	background-color:WHITE;
