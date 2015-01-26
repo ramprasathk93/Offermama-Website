@@ -51,6 +51,32 @@ sec_session_start();
         $('#textarea_feedback').html(text_remaining + ' characters remaining');
             });
             });
+    function uploadfile(){
+        var file=$("#fileToUpload").files[0];
+        var formdata=new FormData();
+        formdata.append('file1',file);
+        var ajax=new XMLHttpRequest();
+        ajax.upload.addEventListener("progress",progressHandler,false);
+        ajax.addEventListener("load",completeHandler,false);
+        ajax.addEventListener("error",errorHandler,false);
+        ajax.addEventListener("abort",abortHandler,false);
+        ajax.open("POST","file_upload_parser.php");
+        ajax.send(formdata);
+    }
+    function progressHandler(event){
+        var percent=(event.loaded/event.total)*100;
+        $('#progressbar').value=Math.round(percent);
+    }
+    
+    function completeHandler(event){
+        $('#status').innerHTML= event.target.responseText;
+    }
+    function errorHandler(event){
+        $('#status').innerHTML="Upload Failed";
+    }
+    function abortHandler(event){
+        $('#status').innerHTML="Upload Aborted";
+    }
 </script>
 </head>
 <body>
@@ -96,9 +122,15 @@ Offermama
 </div>
 <div id="textarea_feedback"></div><br>
 <div class="row">
-    <div class="small-6 columns">
+    <div class="small-2 columns">
     <label class="field" for="image">Upload a image:</label>
     <input name="fileToUpload" type="file" id="fileToUpload">
+    <input type="button" value="upload" onclick=uploadfile()>
+    </div>
+    <div class="small-2 small-uncentered columns">
+        <br/>
+        <progress id="progressbar" value="0" max="100" style="width:300px;"></progress>
+        <div id="status"></div>
     </div>
 </div>
 <div class="row">
