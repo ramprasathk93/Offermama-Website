@@ -17,15 +17,16 @@ $date = date("is",$date_array[1]);
 
 //-------------------------------------------------------------------------------------------------------------
     //Uploading image to server directory
+    $imgname="B".$date;
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $target_file = $target_dir . $imgname;
     
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";}
     $file = basename($target_file);
-    $imgname="B".$date;
+    
     //if(isset($_POST['upload'])){
     try {
     $conn = new PDO("mysql:host=$servername;dbname=offermama", $username, $password);

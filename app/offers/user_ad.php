@@ -96,9 +96,13 @@ Offermama
 </div>
 <div id="textarea_feedback"></div><br>
 <div class="row">
-    <div class="small-6 columns">
+    <div class="small-2 columns">
     <label class="field" for="image">Upload a image:</label>
     <input name="fileToUpload" type="file" id="fileToUpload">
+    </div>
+    <div class="small-2 small-uncentered columns">
+        <br/>
+        <div class="progress round" id="progress" style="display: none;"></div>
     </div>
 </div>
 <div class="row">
