@@ -10,6 +10,7 @@ else {
     $uid='unknown';
 }
 require_once '../../config/database.php';
+if(unlink('uploads/'.$pid)){
 $stmt=$conn->prepare('delete from postuser where postid=:pid');
 $stmt->bindParam(':pid',$pid);
 $stmt->execute();
@@ -32,5 +33,6 @@ foreach($conn->query('select * from postuser where userid="'.$uid.'"')as $row){
                 </div>
                 </div>
                 ';   
+}
 }
 ?>
