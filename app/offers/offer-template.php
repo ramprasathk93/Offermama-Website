@@ -19,7 +19,7 @@
        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'","'.$row['b_id'].'")>
                 <div class="row">
                     <div class="small-5 small-uncentered columns">
-                        <h5>'.$k['name'].'</h5>
+                        <div><h5 onclick=click_businfo("'.$row['b_id'].'")>'.$k['name'].'</h5></div>
                     </div>
                     <div class="small-1 small-uncentered columns">
                       <div class="rating">'.number_format((float)$rating, 1, '.', '').'
@@ -57,7 +57,7 @@
                 <span>
                 <div class="row">
                     <div class="small-4 columns">
-                        <img src="images/rest.jpg">
+                        <img src="businesslogos/'.$k['logo'].'.jpg">
                     </div>
                     <div class="small-8 small-uncentered columns">
                         <font style="font-family:Open Sans;font-size:14px;">

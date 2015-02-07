@@ -3,11 +3,6 @@
        click_cat('home',0);
     });
     
-    $(document).on('click','#comment_btn',function(){
-        $.post('validate_comment.php',$('#usercomment').serialize(),function(response){
-        $('.p2p').html(response);
-        });
-    });
 function click_recommend(pid,bid,uid){
     if(!uid.localeCompare('unknown')){
         alert('Not logged in');
@@ -90,15 +85,9 @@ function click_unlike(pid,uid){
         })
     }
 }
-
-//funciton to load the  p2p offer details
-    function click_poffer(id){
-        $.post('load_product_p2p.php',{'id':id},function(response){
-            $(".p2p").html(response);
-        })       
-    } 
 //fucntion to load the offer details
     function click_offer(id,bid){
+        $('.p2p').innerHTML='Loading...';
         $.post('load_product.php',{'id':id,'bid':bid},function(response){
             $(".p2p").html(response);
         })       
@@ -156,6 +145,7 @@ function click_unlike(pid,uid){
         </nav>\
         </div>';
         var n=id.localeCompare('p2p');
+        $('.wall').innerHTML='Loading...';
         if(n==0){
             //$('#mini_bar').html(str);
             $.post('offers.php',{'cat':id,'sort':k},function(response){
@@ -177,19 +167,24 @@ function click_unlike(pid,uid){
     }
 //To categorize by target market in p2p
     function click_target(k){
+        $('.wall').innerHTML='Loading...';
         $.post('p2p_offers.php',{year:k},function(response){
                $('.wall').html(response);
                })
     }
     function click_poffer(pid){
+        $('.p2p').innerHTML='Loading...';
         $.post('load_poffer.php',{'pid':pid},function(response){
             $('.p2p').html(response);
         })
     }
     function click_review(bid,uid){
-        chk_empty();
+        if ( $('#comment_text').val()=='' && ($('#comment_text').val().trim().length == 0) )
+        {
+            alert('Please type a review');
+        }
         
-        if(!uid.localeCompare('unknown')){
+        else if(!uid.localeCompare('unknown')){
             alert('Not logged in');
         }
 else{
@@ -201,9 +196,7 @@ else{
         })
         }
     }
-    function chk_empty(){
-    if ( $('#comment_text').val()=='' && ($('#comment_text').val().trim().length == 0) )
-    {
-        alert('Please type a review');
-    }
-    }
+    function click_businfo(bid){
+        $.post('business-info.php',{'bid':bid},function(response){
+            $('body').html(response);
+        })}

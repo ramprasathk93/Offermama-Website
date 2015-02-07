@@ -19,15 +19,15 @@ $date = date("is",$date_array[1]);
 
 //-------------------------------------------------------------------------------------------------------------
     //Uploading image to server directory
+    $imgname="pu".$date;
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    
+    $target_file = $target_dir . $imgname;
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";}
     $file = basename($target_file);
-    $imgname="pu".$date;
+    
     //if(isset($_POST['upload'])){
   
 	$stmt = $conn->prepare("insert into postuser(userid,postid,content,imgname,target,mrp,sp) VALUES (:userid,:postid,:content,:imgname,:target,:mrp,:sp)");
