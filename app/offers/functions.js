@@ -1,7 +1,7 @@
 //
-    $(document).ready(function(){
-       click_cat('home',0);
-    });
+//    $(document).ready(function(){
+//       click_cat('home',0);
+//    });
     
 function click_recommend(pid,bid,uid){
     if(!uid.localeCompare('unknown')){
