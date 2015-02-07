@@ -1,5 +1,5 @@
 <?php
-$bid=$_POST['bid'];
+$bid=$_REQUEST['bid'];
 require_once "../../config/database.php";
 
 foreach($conn->query('select * from business_info where b_id="'.$bid.'"')as $x){
@@ -7,6 +7,7 @@ foreach($conn->query('select * from business_info where b_id="'.$bid.'"')as $x){
     $addr=$x['address'];
     $phone=$x['phone'];
     $category=$x['category'];
+    $img=$x['logo'];
 }
 
 echo '<div class"contain-to-grid fixed">
@@ -40,7 +41,7 @@ Offermama
 
 <br>
 <div class="row" style="text-align:center;">
-    <div class="small-5 small-uncentered columns"><img class="row right" style="height:300;" src="uploads/20140926_095434.jpg"></div>
+    <div class="small-5 small-uncentered columns"><img class="row right" style="height:300;" src="businesslogos/'.$img.'.jpg"></div>
     <div class="small-6 small-uncentered columns" style="text-align:left;">
         <table style="border:none;">
         <div class="row"><div><td colspan="2"><b><h2>'.$name.'</h2></b></td></div></div>
