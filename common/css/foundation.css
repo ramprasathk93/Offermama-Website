@@ -64,7 +64,8 @@ body {
   font-style: normal;
   line-height: 1.5;
   position: relative;
-  cursor: auto; }
+  cursor: auto; 
+z-index: 99}
 
 a:hover {
   cursor: pointer; }
@@ -328,7 +329,8 @@ select {
     width: 75%; }
 
   .small-10 {
-    width: 83.33333%; }
+    width: 83.33333%; 
+  }
 
   .small-11 {
     width: 91.66667%; }
@@ -1702,7 +1704,7 @@ meta.foundation-mq-topbar {
     width: 100%;
     max-height: 100%; }
     .fixed.expanded:not(.top-bar) .title-area {
-      position: fixed;
+     /*changed */ position: relative;
       width: 100%;
       z-index: 99; }
     .fixed.expanded:not(.top-bar) .top-bar-section {
@@ -1743,8 +1745,9 @@ meta.foundation-mq-topbar {
     margin: 0; }
   .top-bar .name {
     height: 2.8125rem;
-    margin: 0;
-    font-size: 16px; }
+    margin-left: 100;
+    font-size: 16px; 
+     position: relative;}
     .top-bar .name h1, .top-bar .name h2, .top-bar .name h3, .top-bar .name h4, .top-bar .name p, .top-bar .name span {
       line-height: 2.8125rem;
       font-size: 1.0625rem;
@@ -1814,7 +1817,7 @@ meta.foundation-mq-topbar {
     margin: 0; }
   .top-bar-section .divider,
   .top-bar-section [role="separator"] {
-    border-top: solid 1px #1a1a1a;
+   border-top: solid 1px #1a1a1a;
     clear: both;
     height: 1px;
     width: 100%; }
@@ -1826,9 +1829,9 @@ meta.foundation-mq-topbar {
       color: #FFFFFF;
       padding: 12px 0 12px 0;
       padding-left: 0.9375rem;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-      font-size: 0.8125rem;
-      font-weight: normal;
+      font-family: "Open Sans";
+      font-size:0.9rem;
+      font-weight:350;
       text-transform: none; }
       .top-bar-section ul li > a.button {
         font-size: 0.8125rem;
@@ -2014,7 +2017,10 @@ meta.foundation-mq-topbar {
     .top-bar .title-area {
       float: left; }
     .top-bar .name h1 a {
-      width: auto; }
+      width: auto;
+    font-family: "Open Sans";
+        font-size: 1.5 rem;
+         }
     .top-bar input,
     .top-bar .button,
     .top-bar button {
@@ -2131,7 +2137,7 @@ meta.foundation-mq-topbar {
     .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
       border-bottom: none;
       border-top: none;
-      border-right: solid 1px #4e4e4e;
+      /* changed border-right: solid 1px #4e4e4e;*/
       clear: none;
       height: 2.8125rem;
       width: 0; }
@@ -3238,6 +3244,7 @@ meta.foundation-mq-topbar {
   .tabs dd, .tabs .tab-title {
     position: relative;
     margin-bottom: 0 !important;
+     
     list-style: none;
     float: left; }
     .tabs dd > a, .tabs .tab-title > a {

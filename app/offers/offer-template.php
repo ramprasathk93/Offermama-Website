@@ -56,21 +56,21 @@
                 </div>
                 <span>
                 <div class="row">
-                    <div class="small-2 columns" style="width:100;height:50;">
-                        <img src="uploads/20140926_095434.jpg">
+                    <div class="small-4 columns">
+                        <img src="images/rest.jpg">
                     </div>
                     <div class="small-8 small-uncentered columns">
-                        <font style="font-size:14px;">
+                        <font style="font-family:Open Sans;font-size:14px;">
                         '.$row['content'].'
                         </font>
                     </div>
-                    <div class="small-2 columns" style="text-align:center;">
-                        <div><strike><font style="font-size:14px;">Rs.'.$row['mrp'].'</font></strike></div>
+                    <div class="small-2 columns amount" style="text-align:center;">
+                        <div><strike><font style="font-family:Open Sans;font-size:14px;">Rs.'.$row['mrp'].'</font></strike></div>
                         <div class="row">
-                            <font style="color:#CC0000;font-size:16px;">Rs.'.$row['sp'].'</font>
+                            <font style="font-family:Open Sans;color:#CC0000;font-size:16px;">Rs.'.$row['sp'].'</font>
                         </div>
                         <div class="row">
-                            <font style="font-size:10px;">(Selling Price)</font>
+                            <font style="font-family:Open Sans;font-size:10px;">(Selling Price)</font>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                                 <div class="like-button">'.$str.'</div>
                             </div>
                             <div class="small-7 small-uncentered columns">
-                            <div class="no-of-likes">
+                            <div class="no-of-likes" style="font-family: Open Sans">
                             '.$row['likes_count'].' likes
                             </div>
                             </div>

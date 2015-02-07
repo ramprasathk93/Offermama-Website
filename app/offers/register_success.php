@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
         <meta charset="UTF-8">
         <title>Secure Login: Registration Success</title>
@@ -26,7 +27,9 @@ Offermama
  
 <ul class="left">
 <li class="divider"></li>
+    
 <li><a href='user_ad.php'>Sell your stuff</a></li>
+
 <li class="divider"></li>
 </ul>
  
