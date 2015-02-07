@@ -14,7 +14,7 @@ echo '<div class"contain-to-grid fixed">
 <ul class="title-area">
 <li class="name">
 <h1>
-<a href="home.php">
+<a href="index.php">
 Offermama
 </a>
 </h1>
