@@ -10,13 +10,23 @@ sec_session_start();
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
 <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=OpenSans">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
 <script src="../../common/js/jquery.min.js"></script>
 <script src="functions.js"></script>
 <script src="../../common/js/foundation/foundation.js"></script>
+   <script>
+        $document.ready(function(){
+            $(".restaurants").click(function(){
+                $("#paperwall").css("background-color","#fff");
+            });
+        });
+    
+    </script>
 </head>
-<body>
+<body id="paperwall" style="background-image:/images/rest.jpg">
 <?php if (login_check($mysqli) == true) : ?>
-<div class"contain-to-grid fixed">
+<div class="contain-to-grid fixed">
 <nav class="top-bar tb" data-topbar>
 <ul class="title-area">
 <li class="name">
@@ -28,15 +38,17 @@ Offermama
 </li>
 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 </ul>
-<section class="top-bar-section">
- 
-<ul class="left">
-<li class="divider"></li>
+<section class="top-bar-section"> 
+    
+        <ul class="left">
+        <li class="divider"></li>
+        <li><a onclick="click_sell()">Sell your stuff</a></li>
+        <li class="divider"></li>
+    </ul>
+<ul class="right">
+    <li class="divider"></li>
 <li><a href='user_ad.php'>Sell your stuff</a></li>
 <li class="divider"></li>
-</ul>
- 
-<ul class="right">
 <li class="divider"></li>
 <li><a href="profile.php">Profile</a></li>
 <li class="divider"></li>
@@ -44,6 +56,7 @@ Offermama
 <li class="divider"></li>
 <li><a href='includes/logout.php'>Logout</a></li>
 </ul>
+        
 </section>
 </nav>
 </div>
