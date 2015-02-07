@@ -1,6 +1,12 @@
 <?php
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
-       $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       if( ($k['recommend'] + $k['unrecommend']) != 0 ){
+            $rating=($k['recommend']/($k['recommend']+$k['unrecommend']))*5;
+       }
+
+        else{
+            $rating=0;
+        }
        $str='<a onclick=click_like("'.$row['post_id'].'","'.$u_id.'")>Like</a>';
        $r1='<a onclick=click_recommend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>approve</a>';
        $r2='<a onclick=click_unrecommend("'.$row['post_id'].'","'.$row['b_id'].'","'.$u_id.'")>disapprove</a>';
@@ -15,7 +21,7 @@
        }
        
        
-       
+       if( $row['mrp'] != 0 ){
        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'","'.$row['b_id'].'")>
                 <div class="row">
                     <div class="small-5 small-uncentered columns">
@@ -90,5 +96,72 @@
                     </div>
                 </div>
             </div>';
-   
+       }
+    else{
+               echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'","'.$row['b_id'].'")>
+                <div class="row">
+                    <div class="small-5 small-uncentered columns">
+                        <div><h5 onclick=click_businfo("'.$row['b_id'].'")>'.$k['name'].'</h5></div>
+                    </div>
+                    <div class="small-1 small-uncentered columns">
+                      <div class="rating">'.number_format((float)$rating, 1, '.', '').'
+                        </div>
+                    </div>
+                    <div class="small-2 small-uncentered columns">
+                    <div class="recommend-button">
+                    <div id="'.$k['b_id'].'">
+                    '.$r1.'
+                    </div>
+                    </div>
+                    </div>
+                    <div class="small-1 small-uncentered columns">
+                    <div class="no-of-recommends">
+                    <div id="'.$k['b_id'].'">
+                    '.$k['recommend'].'
+                    </div>
+                    </div>
+                    </div>
+                    <div class="small-2 small-uncentered columns">
+                    <div class="unrecommend-button">
+                    <div id="'.$k['b_id'].'">
+                    '.$r2.'
+                    </div>
+                    </div>
+                    </div>
+                    <div class="small-1 small-uncentered columns">
+                    <div class="no-of-unrecommends">
+                    <div id="'.$k['b_id'].'">
+                    '.$k['unrecommend'].'
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                <span>
+                <div class="row">
+                    <div class="small-4 columns">
+                        <img src="businesslogos/'.$k['logo'].'.jpg">
+                    </div>
+                    <div class="small-8 small-uncentered columns">
+                        <font style="font-family:Open Sans;font-size:14px;">
+                        '.$row['content'].'
+                        </font>
+                    </div>
+                </div>
+                </span>
+                <div class="row">
+                    <div class="small-12 small-uncentered columns">
+                        <div class="row">
+                            <div class="small-3 columns">
+                                <div class="like-button">'.$str.'</div>
+                            </div>
+                            <div class="small-7 small-uncentered columns">
+                            <div class="no-of-likes" style="font-family: Open Sans">
+                            '.$row['likes_count'].' likes
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>';
+    }
 ?>
