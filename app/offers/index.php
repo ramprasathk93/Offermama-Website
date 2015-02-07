@@ -9,6 +9,23 @@
 <script src="functions.js"></script>
 <script src="../../common/js/foundation/foundation.js"></script>
     <script>
+        $(document).ready(function(){
+        $("#all").click(function(){
+            $("#paperwall").css("background-image","none");
+            $("#paperwall").css("background-color","#ef5350");
+           $(".off").css("background-image","url(http://localhost/offermama/app/offers/images/rest.jpg)","no-repeat");
+            $(".off").css("background-size","100%");
+            $("#mini_bar").css("opacity",1); 
+            $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
+            $("#paperwall .wall").css("opacity",0.9);
+            $(".row .p2p").css("opacity",0.7);
+              $(".top a").css("color","#fff");
+            $(".index h1").css("opacity",1);
+             $(".index h4").css("opacity",1);
+            $(".index img").css("opacity",1);
+            
+        });
+    });
     $(document).ready(function(){
         $("#restaurants").click(function(){
             $("#paperwall").css("background-image","none");
@@ -158,7 +175,7 @@
     <div class="small-12 large-2 small-uncentered columns small-12 maincategory menu">
        
          <dl class="tabs pill vertical" style="z-index:99">
-            <dd><a id="All" onclick=click_cat("home",0) >ALL</a></dd>
+            <dd><a id="all" onclick=click_cat("home",0) >ALL</a></dd>
             <dd><a id="restaurants" onclick=click_cat("restaurants",0) >Restaurants</a></dd>
             <dd><a id="grooming" onclick=click_cat("grooming",0)>Grooming/Optics</a></dd>
             <dd><a id="transport" onclick=click_cat("transport",0)>Cabs/Tours</a></dd>
