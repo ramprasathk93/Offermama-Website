@@ -449,7 +449,7 @@ opacity:0;
   
 }
 #paperwall{
-background-image: url(http://localhost/offermama/app/offers/images/OfferMama_Start_Page.JPG);
+background-image: url(../../app/offers/images/OfferMama_Start_Page.JPG);
     background-size: cover;
     
 }
