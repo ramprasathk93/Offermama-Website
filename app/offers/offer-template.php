@@ -62,8 +62,8 @@
                 </div>
                 <span>
                 <div class="row">
-                    <div class="small-4 columns">
-                        <img src="businesslogos/'.$k['logo'].'.jpg">
+                    <div class="small-2 columns">
+                        <img src="businesslogos/'.$k['logo'].'">
                     </div>
                     <div class="small-8 small-uncentered columns">
                         <font style="font-family:Open Sans;font-size:14px;">
@@ -71,12 +71,9 @@
                         </font>
                     </div>
                     <div class="small-2 columns amount" style="text-align:center;">
-                        <div><strike><font style="font-family:Open Sans;font-size:14px;">Rs.'.$row['mrp'].'</font></strike></div>
+                        <div><strike><font style="font-family:Open Sans;font-size:14px; margin-left:-10;">Rs.'.$row['mrp'].'</font></strike></div>
                         <div class="row">
-                            <font style="font-family:Open Sans;color:#CC0000;font-size:16px;">Rs.'.$row['sp'].'</font>
-                        </div>
-                        <div class="row">
-                            <font style="font-family:Open Sans;font-size:10px;">(Selling Price)</font>
+                            <font style="font-family:Open Sans;color:#CC0000;font-size:16px; margin-right:5;">Rs.'.$row['sp'].'</font>
                         </div>
                     </div>
                 </div>
@@ -138,8 +135,8 @@
                 </div>
                 <span>
                 <div class="row">
-                    <div class="small-4 columns">
-                        <img src="businesslogos/'.$k['logo'].'.jpg">
+                    <div class="small-2 columns">
+                        <img src="businesslogos/'.$k['logo'].'">
                     </div>
                     <div class="small-8 small-uncentered columns">
                         <font style="font-family:Open Sans;font-size:14px;">

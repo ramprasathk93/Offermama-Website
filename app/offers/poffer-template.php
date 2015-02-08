@@ -7,9 +7,6 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="small-2 columns" style="width:100;height:50;">
-                        <img src="uploads/20140926_095434.jpg">
-                    </div>
                     <div class="small-8 small-uncentered columns">
                     <font style="font-size:14px;">'.$row['content'].'</font>
                     </div>
