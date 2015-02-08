@@ -171,6 +171,7 @@ sec_session_start();
 </ul>
 <section class="top-bar-section top"> 
 <ul class="right index">
+<li><a href='profile.php'>Profile</a></li>
 <li><a href='user_ad.php'>Sell your stuff</a></li>
 <li><a href="register.php">Register</a></li>
 

@@ -175,7 +175,7 @@
     <div class="small-12 large-2 small-uncentered columns small-12 maincategory menu">
        
          <dl class="tabs pill vertical" style="z-index:99">
-            <dd><a id="all" onclick=click_cat("home",0) >ALL</a></dd>
+            <dd><a id="all" onclick=click_cat("home",0) >All</a></dd>
             <dd><a id="restaurants" onclick=click_cat("restaurants",0) >Restaurants</a></dd>
             <dd><a id="grooming" onclick=click_cat("grooming",0)>Grooming/Optics</a></dd>
             <dd><a id="transport" onclick=click_cat("transport",0)>Cabs/Tours</a></dd>
