@@ -161,7 +161,7 @@
 </ul>
 <section class="top-bar-section top"> 
 <ul class="right index">
-<li><a href='user_ad.php'>Sell your stuff</a></li>
+<!--<li><a href='user_ad.php'>Sell your stuff</a></li>-->
 <li><a href="register.php">Register</a></li>
 
 <li><a href='login.php'>Login</a></li>
