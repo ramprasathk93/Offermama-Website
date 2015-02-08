@@ -43,6 +43,7 @@ foreach($conn->query('select * from review where b_id="'.$bid.'" order by time d
 }
 function xss_clean($content)
 {
+        $content = preg_replace("/[<>]/","",$content);
         // Fix &entity\n;
         $content = str_replace(array('&amp;','&lt;','&gt;'), array('&amp;amp;','&amp;lt;','&amp;gt;'), $content);
         $content = preg_replace('/(&#*\w+)[\x00-\x20]+;/u', '$1;', $content);
