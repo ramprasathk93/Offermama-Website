@@ -1,11 +1,12 @@
 .box1{
     background-color:#f44336;
     color:white;
-    border-radius: 5px;
+    border-radius: 2px;
     height: 55px;
    margin-top: 10%;
     box-sizing:border-box;
-    box-shadow: 1px 1.5px 1.5px 0px #e53935;
+    -webkit-transition:0.7s;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.24);
     
 }
 
@@ -40,11 +41,13 @@
     font-size: 150%;
 }
 .top-bar-section li:not(.has-form) a:not(.button){
+    -webkit-transition: 0.7s;
     background-color:transparent;
     color: #fff;
  
 }
 .top-bar-section li:not(.has-form) a:not(.button):hover{
+     -webkit-transition: 0.7s;
    background-color: transparent;
      color: #fff;
     
@@ -81,7 +84,7 @@
     position: relative;
     width:490%;
     margin-top: 0;
-    height: 12.8%;
+    height: 11%;
     
 }
 .tabs dd > a, .tab-title > a
@@ -154,6 +157,7 @@
     margin:2%;
     background-color: #eff6f9;
     box-shadow: 0px 4px 8px 0.2px #999;
+    border-style: none;
 }
 .offer:hover{
     cursor:hand;
@@ -168,13 +172,16 @@
 	background-color:#eff6f9;
 }
 .poffer{
-    margin:0;
+   cursor:default;
+    margin:2%;
+    background-color: #eff6f9;
+    box-shadow: 0px 4px 8px 0.2px #999;
 }
 
 .wall{
 	height:80%;
     overflow-y:auto;
-	background-color:#EEEEEE;
+	background-color:#efefef;
     opacity: 0.9;
     margin-left: 5%;
     border-bottom:thick solid;
@@ -191,7 +198,7 @@
     margin-left: 0%;
     overflow-y:auto;
 	background-color:#eff6f9;
-    opacity: 0.7;
+    opacity: 1;
     border-radius:5px;
     position: fixed;
 }
@@ -224,7 +231,7 @@ margin-left:20%;
   font-size: 35px;
     font-weight: 200;
 
-    margin-left:5%;
+    margin-left:6%;
     
     color: white;
 }
@@ -329,10 +336,12 @@ margin-left:20%;
 }
   
           .top-bar-login ul li:not(.has-form) a:not(.button){
+              -webkit-transition: 0.7s;
     background-color:#fff;
         border-style:none;}
        
         .top-bar-login ul li:not(.has-form) a:not(.button):hover{
+             -webkit-transition: 0.7s;
     background-color:#0D47A1;
             opacity:90%;
     color:#fff;
@@ -346,9 +355,10 @@ margin-left:20%;
   padding-left: 22%;
     font-family: "Roboto";
     width:90%;
-    border-radius: 5px;
-    margin-left: 20%;
-    box-shadow: 0.8px 0.8px 0.5px #0D47A1;
+    border-radius: 2px;
+   
+    -webkit-transition: 0.7s;
+    box-shadow:0px 2px 5px 0px rgba(0,0,0,0.24);
   }
 
 
@@ -428,7 +438,7 @@ margin-left:20%;
 .index h1{
 opacity:0;
 }
-.index sup{
+sup{
     font-size: 60%;
     font-family: "Open Sans";
     font-size-adjust: auto;
@@ -463,9 +473,104 @@ background-image: url(../../app/offers/images/OfferMama_Start_Page.JPG);
 #paperwall .p2p{
 opacity: 0;
 }
-.large-4{
+.off .large-4{
     left:-5%;
     height:70%;
     width:21%;
 
 }
+.form_container_user_ad{
+margin-top: 3%;
+}
+#textarea{
+    
+    background-color: #fff;
+    border-radius: 2px;
+box-shadow: 0px 2px 5px rgba(0,0,0,0.30);
+   
+}
+#textarea_feedback{
+    margin-top: 1%;
+  color: #fff;
+    font-family: "Roboto";
+    font-style: oblique;
+    font-weight: normal;
+}
+.category{
+   font-family: "Open Sans";
+    color:#fff;
+    font-size: 100%;
+}
+.category1{
+
+font-size: 90%;
+}
+.mrprate input{
+border-radius: 2px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.30);
+}
+.sprate input{
+border-radius: 2px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.30);
+}
+.sell{
+border-radius: 2px;
+ -webkit-transition: all 0.3s;
+    box-shadow:  0px 2px 5px rgba(0,0,0,0.30);
+}
+#submit_btn{
+background-color: #FBC02D;
+   
+}
+.sell:hover{
+    -webkit-transition: all 0.3s;
+box-shadow: none;
+}
+.sell_tb{
+     background-color:transparent;
+
+}
+.sell_tb .name h1 a{
+margin-top: 2%;
+    font-size: 150%;
+    font-family: "Open Sans";
+}
+.sell_section li:not(.has-form) a:not(.button){
+    -webkit-transition: 0.7s;
+    background-color:transparent;
+    color: #fff;
+ 
+}
+.sell_section li:not(.has-form) a:not(.button):hover{
+    -webkit-transition: 0.7s;
+   background-color: #fff;
+     color: #7986CB;
+    
+  
+}
+.sell_section ul li{
+   background-color: transparent;
+    margin-top:2%;
+        
+}
+
+.profile{
+    height:10%;
+background-color: #757575;
+background:linear-gradient(#757575,transparent);
+}
+.prof{
+    margin-top: 10%;
+}
+.prof dd{
+      
+            box-shadow:0px 2px 5px 0px rgba(0,0,0,0.50);
+            opacity:1;
+    height:10%;
+}
+.prof dd >a{
+     color:#000;
+    padding-top: 15%;
+    opacity: 1;
+}
+

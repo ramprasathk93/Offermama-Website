@@ -85,7 +85,7 @@
                                 <div class="like-button">'.$str.'</div>
                             </div>
                             <div class="small-7 small-uncentered columns">
-                            <div class="no-of-likes" style="font-family: Open Sans">
+                            <div class="no-of-likes" style="font-family: Open Sans;color:#1E52A2">
                             '.$row['likes_count'].' likes
                             </div>
                             </div>

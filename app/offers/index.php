@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../common/fonts">
     <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
 <script src="../../common/js/jquery.min.js"></script>
 <script src="functions.js"></script>
@@ -16,9 +17,9 @@
            $(".off").css("background-image","url(http://localhost/offermama/app/offers/images/rest.jpg)","no-repeat");
             $(".off").css("background-size","100%");
             $("#mini_bar").css("opacity",1); 
-            $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
+            $(".off").css("box-shadow"," 0px 2px 5px 0px rgba(0,0,0,0.3");
             $("#paperwall .wall").css("opacity",0.9);
-            $(".row .p2p").css("opacity",0.7);
+           $(".row .p2p").css("opacity",0.9);
               $(".top a").css("color","#fff");
             $(".index h1").css("opacity",1);
              $(".index h4").css("opacity",1);
@@ -35,7 +36,7 @@
             $("#mini_bar").css("opacity",1); 
             $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
             $("#paperwall .wall").css("opacity",0.9);
-            $(".row .p2p").css("opacity",0.7);
+           $(".row .p2p").css("opacity",0.9);
               $(".top a").css("color","#fff");
             $(".index h1").css("opacity",1);
              $(".index h4").css("opacity",1);
@@ -53,7 +54,7 @@
             $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
           $("#mini_bar").css("opacity",1);
             $("#paperwall .wall").css("opacity",0.9);
-            $(".row .p2p").css("opacity",0.7);
+            $(".row .p2p").css("opacity",0.9);
               $(".top a").css("color","#fff");
                   $(".index h1").css("opacity",1);
             $(".index img").css("opacity",1);
@@ -71,7 +72,7 @@
             $(".row .tb").css("opacity",1);
             $("#mini_bar").css("opacity",1);
             $("#paperwall .wall").css("opacity",0.9);
-            $(".row .p2p").css("opacity",0.7);
+          $(".row .p2p").css("opacity",0.9);
             $(".top a").css("color","#fff");
                   $(".index h1").css("opacity",1);
             $(".index img").css("opacity",1);
@@ -88,8 +89,8 @@
         
             $(".off").css("box-shadow"," 0px 1px 5px 6px #C69C61");
          $("#mini_bar").css("opacity",1);  
-            $("#paperwall .wall").css("opacity",0.7);
-            $(".row .p2p").css("opacity",0.7);
+            $("#paperwall .wall").css("opacity",0.9);
+           $(".row .p2p").css("opacity",0.9);
               $(".top a").css("color","#fff");
           
                   $(".index h1").css("opacity",1);
@@ -104,6 +105,7 @@
             $(".off").css("background-repeat","no-repeat");
             $(".off").css("background-size","100% 100%");
             $("#paperwall .wall").css("opacity",0.9);
+             $(".row .p2p").css("opacity",0.9);
             $("#mini_bar").css("opacity",1);
             $(".off").css("box-shadow"," 0px 1px 8px 6px #CC6687");
               $(".top a").css("color","#fff");
@@ -120,8 +122,8 @@
             $(".off").css("background-size","100% 100%");
             $(".off").css("box-shadow"," 0px 1px 10px 3px #383333");
             $("#mini_bar").css("opacity",1);
-            $("#paperwall .wall").css("opacity",0.5);
-            $(".row .p2p").css("opacity",0.7);
+            $("#paperwall .wall").css("opacity",0.9);
+            $(".row .p2p").css("opacity",0.9);
               $(".top-bar-section a").css("color","#fff");
               $(".index h1").css("opacity",1);
             $(".index img").css("opacity",1);

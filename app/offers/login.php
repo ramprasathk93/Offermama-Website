@@ -16,6 +16,7 @@ if (login_check($mysqli) == true) {
     <link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
+     <link rel="stylesheet" type="text/css" href="../../common/fonts">
     <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
   <script type="text/JavaScript" src="js/sha512.js"></script> 
         <script type="text/JavaScript" src="js/forms.js"></script> 
@@ -24,7 +25,7 @@ if (login_check($mysqli) == true) {
                     box-shadow:0px 0px 0px;
             }
         button:hover, button:focus, button:hover,  button:focus{
-            transition:right 1000ms ease-out;
+          -webkit-transition: 0.7s;
         box-shadow:0px 0px 0px 0px;
         background-color:#0D47A1;
         }
@@ -35,7 +36,7 @@ if (login_check($mysqli) == true) {
             margin-top:21%;
         }
          .signup-panel .welcome {
-                margin-left:-10%;
+                margin-left:-20%;
                 font-size:150%;
              width:150%;
         }
@@ -52,7 +53,7 @@ if (login_check($mysqli) == true) {
 <li class="name">
 <h1>
 <a href="index.php" style="color:#0D47A1">
-Offermama
+Offermama<sup>beta</sup>
 </a>
 </h1>
 </li>
