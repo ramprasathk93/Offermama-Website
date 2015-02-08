@@ -63,7 +63,7 @@ Offermama
 <!--<li class="divider"></li>-->
 
     
-<li><a href='user_ad.php'>Sell your stuff</a></li>
+<!--<li><a href='user_ad.php'>Sell your stuff</a></li>-->
     
    <!--<li class="divider"></li>-->
 

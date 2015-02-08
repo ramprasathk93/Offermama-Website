@@ -171,8 +171,8 @@ sec_session_start();
 </ul>
 <section class="top-bar-section top"> 
 <ul class="right index">
-<li><a href='profile.php'>Profile</a></li>
-<li><a href='user_ad.php'>Sell your stuff</a></li>
+<!--<li><a href='profile.php'>Profile</a></li>-->
+<!--<li><a href='user_ad.php'>Sell your stuff</a></li>-->
 <li><a href="register.php">Register</a></li>
 
 <li><a href='includes/logout.php'>Logout</a></li>
@@ -193,7 +193,7 @@ sec_session_start();
             <dd><a id="cg" onclick=click_cat("cg",0)>Cakes/Gifts</a></dd>
             <dd><a id="clothing" onclick=click_cat("clothing",0)>Clothing</a></dd>
             <dd><a id="electronics" onclick=click_cat("electronics",0)>Electronics</a></dd>
-            <dd><a id="p2p" onclick=click_cat("p2p",0)>Peer2Peer</a></dd>
+            <!--<dd><a id="p2p" onclick=click_cat("p2p",0)>Peer2Peer</a></dd>-->
              
           
         </dl>
