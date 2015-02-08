@@ -41,7 +41,7 @@ Offermama
 
 <br>
 <div class="row" style="text-align:center;">
-    <div class="small-5 small-uncentered columns"><img class="row right" style="height:300;" src="businesslogos/'.$img.'.jpg"></div>
+    <div class="small-5 small-uncentered columns"><img class="row right" style="height:300;" src="businesslogos/'.$img.'"></div>
     <div class="small-6 small-uncentered columns" style="text-align:left;">
         <table style="border:none;">
         <div class="row"><div><td colspan="2"><b><h2>'.$name.'</h2></b></td></div></div>
