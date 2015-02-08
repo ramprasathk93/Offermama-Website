@@ -46,7 +46,7 @@ require_once "../../config/database.php";
 ?>
 <div id="enter-comment">
 <form name="usercomment" id="usercomment">
-        <label class="field" for="comment">Comment:</label>
+        <label class="field" for="comment">Reviews:</label>
         <textarea name="content" id="comment_text" rows="3" cols="50" maxlength="140"></textarea>
         <div>
         <div id="textarea_feedback"></div>
