@@ -108,8 +108,7 @@ Offermama<sup>beta</sup>
           <div class="login">
               <p>
         If you don't have a login, please <a href="register.php">register</a><br>
-        If you are done, please <a href="includes/logout.php">log out</a>.<br>
-        You are currently logged <?php echo $logged ?>.
+        
                   </p>
           </div>
         
