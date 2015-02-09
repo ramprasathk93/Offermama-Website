@@ -39,13 +39,14 @@ if (login_check($mysqli) == true) {
                 font-size:150%;
              width:150%;
         }
-        .error{
-            text-align:center;
-            color:red;
-        }
     </style>
 </head>
 <body class="login_bg">
+     <?php
+        if (isset($_GET['error'])) {
+            echo '<p class="error">Error Logging In!</p>';
+        }
+        ?> 
 <div class"contain-to-grid fixed">
 <nav class="top-bar tb" style="background-color:#fff"data-topbar>
 <ul class="title-area" style="margin-top:-0.7%">
@@ -63,7 +64,7 @@ Offermama
  
 <ul class="left">
 <!--<li class="divider"></li>-->
-<li><a href='user_ad.php'>Sell your stuff</a></li>
+<!--<li><a href='user_ad.php'>Sell your stuff</a></li>-->
 <!--<li class="divider"></li>-->
 </ul>
  
@@ -98,11 +99,6 @@ Offermama
               <input type="password" name="password" id="password" placeholder="password">
             </div>
           </div>
-        <?php
-        if (isset($_GET['error'])) {
-            echo '<div class="row error">Error Logging In!</div><br>';
-        }
-        ?>
           <div class="buton_login">
            <!-- <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> -->
               <button class="box box_login" onclick="formhash(this.form,this.form.password);">SUBMIT</button>
