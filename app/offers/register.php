@@ -32,11 +32,11 @@ include_once 'includes/functions.php';
             background-color:#fff;
         }
  button:hover, button:focus, .button:hover, .button:focus {
-     transition:right 1000ms ease-out;
+     -webkit-transition:0.7s;
     box-shadow:0px 0px 0px 0px;
  background-color:#f44336;
- border-color:#f44336;}
 }
+
 
        
      </style>
@@ -50,7 +50,7 @@ include_once 'includes/functions.php';
 <li class="name" >
 <h1>
 <a href="index.php" style="color:#243456">
-Offermama
+Offermama<sup>beta</sup>
 </a>
 </h1>
 </li>
