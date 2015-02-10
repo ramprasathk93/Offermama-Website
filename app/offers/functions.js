@@ -11,7 +11,7 @@ function click_recommend(pid,bid,uid){
     $.post('recommend.php',{'pid':pid,'bid':bid,'uid':uid},function(response){
         $('.recommend-button #'+bid).html(response);
     })
-    $.post('recommend-increment.php',{'bid':bid},function(response){
+    $.post('recommend-increment.php',{'bid':bid,'uid':uid},function(response){
             $('.no-of-recommends #'+bid).html(response);
         })
     }
@@ -24,7 +24,7 @@ function click_unrecommend(pid,bid,uid){
     $.post('unrecommend.php',{'pid':pid,'bid':bid,'uid':uid},function(response){
         $('.unrecommend-button #'+bid).html(response);
     })
-    $.post('unrecommend-increment.php',{'bid':bid},function(response){
+    $.post('unrecommend-increment.php',{'bid':bid,'uid':uid},function(response){
             $('.no-of-unrecommends #'+bid).html(response);
         })
     }
@@ -38,7 +38,7 @@ function click_recommended(pid,bid,uid){
     $.post('recommended.php',{'pid':pid,'bid':bid,'uid':uid},function(response){
         $('.recommend-button #'+bid).html(response);
     })
-    $.post('recommend-decrement.php',{'bid':bid},function(response){
+    $.post('recommend-decrement.php',{'bid':bid,'uid':uid},function(response){
             $('.no-of-recommends #'+bid).html(response);
         })
     }
@@ -51,7 +51,7 @@ function click_unrecommended(pid,bid,uid){
     $.post('unrecommended.php',{'pid':pid,'bid':bid,'uid':uid},function(response){
         $('.unrecommend-button #'+bid).html(response);
     })
-    $.post('unrecommend-decrement.php',{'bid':bid},function(response){
+    $.post('unrecommend-decrement.php',{'bid':bid,'uid':uid},function(response){
             $('.no-of-unrecommends #'+bid).html(response);
         })
     }
@@ -66,7 +66,7 @@ function click_like(pid,uid){
     	$.post('like.php',{'pid':pid,'uid':uid},function(response){
             $('#'+pid+' .like-button').html(response);
         });
-        $.post('like-increment.php',{'pid':pid},function(response){
+        $.post('like-increment.php',{'pid':pid,'uid':uid},function(response){
             $('#'+pid+' .no-of-likes').html(response);
         })
     }
@@ -80,7 +80,7 @@ function click_unlike(pid,uid){
     	$.post('unlike.php',{'pid':pid,'uid':uid},function(response){
             $('#'+pid+' .like-button').html(response);
         });
-        $.post('like-decrement.php',{'pid':pid},function(response){
+        $.post('like-decrement.php',{'pid':pid,'uid':uid},function(response){
             $('#'+pid+' .no-of-likes').html(response);
         })
     }
