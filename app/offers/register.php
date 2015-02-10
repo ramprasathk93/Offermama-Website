@@ -141,7 +141,7 @@ Offermama<sup>beta</sup>
                 <button class="box box1" onclick="return regformhash(this.form,this.form.username,this.form.email,this.form.password,this.form.confirmpwd);">Register</button>
             </div>
       </form>
-         <p class="reg">The password must contain one Uppercase,one smallercase and a number</p>
+         <p class="reg">The password must contain one Uppercase,one lowercase and a number</p>
          <p class="reg">Already have an account? <a href="login.php">Login here &raquo</a></p>
       </div>
     </div>
