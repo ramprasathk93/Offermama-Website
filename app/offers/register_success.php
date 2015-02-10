@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
 <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
+         <link rel="stylesheet" type="text/css" href="../../common/fonts">
     </head>
     <body>
         <div class"contain-to-grid fixed">

@@ -10,8 +10,8 @@ sec_session_start();
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
 <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
-   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=OpenSans">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+
+     <link rel="stylesheet" type="text/css" href="../../common/fonts">
 <script src="../../common/js/jquery.min.js"></script>
 <script src="functions.js"></script>
 <script src="../../common/js/foundation/foundation.js"></script>

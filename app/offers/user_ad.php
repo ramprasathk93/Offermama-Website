@@ -17,9 +17,12 @@ sec_session_start();
         }
         label.field{
         text-align: left;
+            font-family:"Open Sans";
+            color:#fff;
+            font-size:100%;
         width: 100%;
         float: left;
-        font-weight: bold;
+        font-weight: 400;
         }
         fieldset p{
         clear: both;
@@ -38,6 +41,7 @@ sec_session_start();
 <link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
+     <link rel="stylesheet" type="text/css" href="../../common/fonts">
 <script src="../../common/js/jquery.min.js"></script>
 <script src=functions.js></script>
 <script src="../../common/js/foundation/foundation.js"></script>
@@ -53,30 +57,29 @@ sec_session_start();
             });
 </script>
 </head>
-<body>
+<body style="background-color:#7986CB">
 <?php if (login_check($mysqli) == true) : ?>
 <div class"contain-to-grid fixed">
-<nav class="top-bar tb" data-topbar>
+<nav class="top-bar sell_tb" data-topbar>
 <ul class="title-area">
  
 <li class="name">
 <h1>
 <a href="home.php">
-Offermama
+Offermama<sup>beta</sup>
 </a>
 </h1>
 </li>
 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 </ul>
-<section class="top-bar-section">
+<section class="top-bar-section sell_section">
  
-<ul class="left">
-<li class="divider"></li>
-<li><a href='user_ad.php'>Sell your stuff</a></li>
-<li class="divider"></li>
-</ul>
+
  
 <ul class="right">
+    <li class="divider"></li>
+<li><a href='user_ad.php'>Sell your stuff</a></li>
+<li class="divider"></li>
 <li class="divider"></li>
 <li><a href="register.php">Register</a></li>
 <li class="divider"></li>
@@ -86,16 +89,16 @@ Offermama
 </nav>
 </div>
 <form action="validate.php" method="post" enctype="multipart/form-data">
-<div class="row"><div class="small-12 small-centered columns">
+<div class="row form_container_user_ad"><div class="small-12 small-centered columns">
 <div class="row">
 
 <div class="small-4 small-uncentered columns">    
-<label class="field" for="content">Content:</label>
+<label class="field" for="content">Say about your stuff:</label>
 <textarea name="content" id="textarea" rows="4" cols="30%" maxlength="140"></textarea>
 </div>
 </div>
 <div id="textarea_feedback"></div><br>
-<div class="row">
+<div class="row file_up">
     <div class="small-2 columns">
     <label class="field" for="image">Upload a image:</label>
     <input name="fileToUpload" type="file" id="fileToUpload">
@@ -105,9 +108,10 @@ Offermama
         <div class="progress round" id="progress" style="display: none;"></div>
     </div>
 </div>
-<div class="row">
+<div class="row category">
     <div class="small-3 small-uncentered columns">
         <label class="field" for="target" size="20">Category:</label><br>
+        <div class="row category1">
         <input type="radio" name="chk" value="abooks" id="group1">Academic Books<br>
         <input type="radio" name="chk" value="firstyr" class="group1">First-year related<br/>
         <input type="radio" name="chk" value="novels" class="group1">Novels<br/>
@@ -115,13 +119,14 @@ Offermama
         <input type="radio" name="chk" value="electronics" class="group1">Electronics<br/>
         <input type="radio" name="chk" value="others" class="group1">Others<br/>
         <!--<input name="upload" type="submit" class="box" id="upload" value="Upload" >-->
-        <button class="box" id="submit_btn" onclick=check_empty()>Submit</button>
+        <button class="box sell" id="submit_btn" onclick=check_empty()>Submit</button>
+            </div>
     </div>
     <div class="small-1 small-uncentered columns">
-        <div class="row">
+        <div class="row mrprate">
         <label>MRP</label><input type="number" name="mrp" value=0>    
         </div>
-        <div class="row">
+        <div class="row sprate">
         <label>SP</label><input type="number" name="sp" value=0>
         </div>
     </div>
