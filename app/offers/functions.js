@@ -159,6 +159,7 @@ function click_unlike(pid,uid){
             $(".wall").html(response);
         });
         }
+        $('.p2p').html('');
     }
 //To categorize by region
     function click_region(k){
@@ -171,6 +172,7 @@ function click_unlike(pid,uid){
         $.post('p2p_offers.php',{year:k},function(response){
                $('.wall').html(response);
                })
+        $('.p2p').html('');
     }
     function click_poffer(pid){
         $('.p2p').innerHTML='Loading...';
