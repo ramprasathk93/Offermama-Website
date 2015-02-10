@@ -16,7 +16,6 @@ if (login_check($mysqli) == true) {
     <link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
-     <link rel="stylesheet" type="text/css" href="../../common/fonts">
     <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
   <script type="text/JavaScript" src="js/sha512.js"></script> 
         <script type="text/JavaScript" src="js/forms.js"></script> 
@@ -25,7 +24,7 @@ if (login_check($mysqli) == true) {
                     box-shadow:0px 0px 0px;
             }
         button:hover, button:focus, button:hover,  button:focus{
-          -webkit-transition: 0.7s;
+            transition:right 1000ms ease-out;
         box-shadow:0px 0px 0px 0px;
         background-color:#0D47A1;
         }
@@ -36,25 +35,24 @@ if (login_check($mysqli) == true) {
             margin-top:21%;
         }
          .signup-panel .welcome {
-                margin-left:-20%;
+                margin-left:-10%;
                 font-size:150%;
              width:150%;
+        }
+        .error{
+            text-align:center;
+            color:red;
         }
     </style>
 </head>
 <body class="login_bg">
-     <?php
-        if (isset($_GET['error'])) {
-            echo '<p class="error">Error Logging In!</p>';
-        }
-        ?> 
 <div class"contain-to-grid fixed">
 <nav class="top-bar tb" style="background-color:#fff"data-topbar>
 <ul class="title-area" style="margin-top:-0.7%">
 <li class="name">
 <h1>
 <a href="index.php" style="color:#0D47A1">
-Offermama<sup>beta</sup>
+Offermama
 </a>
 </h1>
 </li>
@@ -65,7 +63,7 @@ Offermama<sup>beta</sup>
  
 <ul class="left">
 <!--<li class="divider"></li>-->
-<!--<li><a href='user_ad.php'>Sell your stuff</a></li>-->
+<li><a href='user_ad.php'>Sell your stuff</a></li>
 <!--<li class="divider"></li>-->
 </ul>
  
@@ -100,6 +98,11 @@ Offermama<sup>beta</sup>
               <input type="password" name="password" id="password" placeholder="password">
             </div>
           </div>
+        <?php
+        if (isset($_GET['error'])) {
+            echo '<div class="row error">Error Logging In!</div><br>';
+        }
+        ?>
           <div class="buton_login">
            <!-- <input type="button" value="Login" onclick="formhash(this.form, this.form.password);" /> -->
               <button class="box box_login" onclick="formhash(this.form,this.form.password);">SUBMIT</button>
@@ -108,7 +111,8 @@ Offermama<sup>beta</sup>
           <div class="login">
               <p>
         If you don't have a login, please <a href="register.php">register</a><br>
-        
+        If you are done, please <a href="includes/logout.php">log out</a>.<br>
+        You are currently logged <?php echo $logged ?>.
                   </p>
           </div>
         
