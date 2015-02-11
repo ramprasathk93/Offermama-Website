@@ -4,11 +4,21 @@
 <link rel="stylesheet" type="text/css" href="../../common/css/foundation.css">
 <link rel="stylesheet" type="text/css" href="../../common/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../../common/fonts">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
 <script src="../../common/js/jquery.min.js"></script>
 <script src="functions.js"></script>
 <script src="../../common/js/foundation/foundation.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59582237-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
     <script>
         $(document).ready(function(){
         $("#all").click(function(){
@@ -184,7 +194,7 @@
             <dd><a id="cg" onclick=click_cat("cg",0)>Cakes/Gifts</a></dd>
             <dd><a id="clothing" onclick=click_cat("clothing",0)>Clothing</a></dd>
             <dd><a id="electronics" onclick=click_cat("electronics",0)>Electronics</a></dd>
-            <dd><a id="p2p" onclick=click_cat("p2p",0)>Peer2Peer</a></dd>
+            <!--<dd><a id="p2p" onclick=click_cat("p2p",0)>Peer2Peer</a></dd>-->
              
           
         </dl>
