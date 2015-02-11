@@ -32,6 +32,7 @@
 .signup-panel .button{
     background-color: purple;
 }
+
 .tb{
     background-color:transparent;
     <!--box-shadow: 0px 8px 6px -4px #999;-->
@@ -90,7 +91,8 @@
 .tabs dd > a, .tab-title > a
 {
      font-family: "Open Sans";
-  
+   
+  color: #000;
     height:auto;
     width:auto;
     padding-top: 10%;
@@ -116,9 +118,9 @@
 }
 .off{
 
-    margin-top: 0%;
+    margin-top: -0.5%;
     max-width: 100%;
-   height: 80%;
+   height: 90.5%;
     border-bottom-style: solid;
     border-bottom: thick;
     border-bottom-color: #E0E0E0;
@@ -191,11 +193,11 @@
 }
 
 .p2p{
-	width: 21%;
-    height:70%;
+	width: 25%;
+    height:78%;
     
     margin-top: 2%;
-    margin-left: 0%;
+    margin-left: -2%;
     overflow-y:auto;
 	background-color:#eff6f9;
     opacity: 1;
@@ -225,7 +227,7 @@ margin-left:20%;
     margin-top: 5px;
 }
 .welcome {
-    font-family: "Open Sans";
+    font-family: "Ubuntu";
      width: 100%;
     margin-top: 5%;
   font-size: 35px;
@@ -444,20 +446,12 @@ sup{
     font-size-adjust: auto;
 }
 .index{
+    margin-top: -4%;
     width: 110%;
     opacity: 1;
       color: #4B77BE;
 }
-.index img
-{
-    margin-top: -12%;
-    margin-left: 0;
-    box-shadow: 1.2px 1.2px 6px 0.085px #605c5c;
-    border-radius: 10%;
-    z-index: 100;
-    opacity: 0;
-  
-}
+
 #paperwall{
 background-image: url(../../app/offers/images/OfferMama_Start_Page.JPG);
     background-size: cover;
@@ -574,3 +568,40 @@ background:linear-gradient(#757575,transparent);
     opacity: 1;
 }
 
+.bus_tab h3 {
+            font-family: "Open Sans";
+        }
+.bus_tab tr h5 {
+            font-family: "Open Sans";
+        }
+ .bus_tb{
+     height: 9%;
+     background-color: #4CAF50;
+      
+ }
+ .bus_section li:not(.has-form) a:not(.button){
+    -webkit-transition: 0.7s;
+    background-color:transparent;
+    color: #fff;
+ 
+}
+ .bus_section li:not(.has-form) a:not(.button):hover{
+     -webkit-transition: 0.7s;
+     border-radius: 2px;
+   background-color: #fff;
+     color: #4CAF50;
+}
+.bus_index{
+    margin-top: 0%;
+}
+.bus_section{
+    
+}
+
+.bus_tb h1 a{
+    
+    font-family: "Open Sans";
+    margin-top: 1%;
+    font-size: 150%;
+    
+}
