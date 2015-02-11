@@ -25,7 +25,7 @@
        echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'","'.$row['b_id'].'")>
                 <div class="row">
                     <div class="small-5 small-uncentered columns">
-                        <div><h5>'.$k['name'].'</h5></div>
+                        <div><a href="business-info.php?bid='.$row['b_id'].'"><h5>'.$k['name'].'</h5></a></div>
                     </div>
                     <div class="small-1 small-uncentered columns">
                       <div class="rating">'.number_format((float)$rating, 1, '.', '').'
