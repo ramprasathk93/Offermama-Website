@@ -52,7 +52,7 @@ else if(!strcmp($cat,"cg"))
 {
     //echo '<div class="mini_taskbar"><div class="pg_recent" onclick=click_pg_recent()>Recent</div>'.
       //  '<div class="pg_top" onclick=click_pg_top()>Top</div></div>';
-    foreach($conn->query("select * from post_b where category='pg' order by likes_count desc") as $row)
+    foreach($conn->query("select * from post_b where category='cg' order by likes_count desc") as $row)
     {   foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
        //echo '<div class="panel offer" id="'.$row['post_id'].'" onclick=click_offer("'.$row['post_id'].'")>'.$row['content'].'</div>';
        include 'offer-template.php';
@@ -170,7 +170,7 @@ else if(!strcmp($cat,"cg"))
 {
     //echo '<div class="mini_taskbar"><div class="pg_recent" onclick=click_pg_recent()>Recent</div>'.
       //  '<div class="pg_top" onclick=click_pg_top()>Top</div></div>';
-    foreach($conn->query("select * from post_b where category='pg' and area='gandhipuram' order by likes_count desc") as $row)
+    foreach($conn->query("select * from post_b where category='cg' and area='gandhipuram' order by likes_count desc") as $row)
     {   foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
        include 'offer-template.php';
     }
@@ -252,7 +252,7 @@ else if(!strcmp($cat,"cg"))
 {
     //echo '<div class="mini_taskbar"><div class="pg_recent" onclick=click_pg_recent()>Recent</div>'.
       //  '<div class="pg_top" onclick=click_pg_top()>Top</div></div>';
-    foreach($conn->query("select * from post_b where category='pg' and area='peelamedu' order by likes_count desc") as $row)
+    foreach($conn->query("select * from post_b where category='cg' and area='peelamedu' order by likes_count desc") as $row)
     {   foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
        include 'offer-template.php';
     }
@@ -332,7 +332,7 @@ else if(!strcmp($cat,"cg"))
 {
     //echo '<div class="mini_taskbar"><div class="pg_recent" onclick=click_pg_recent()>Recent</div>'.
       //  '<div class="pg_top" onclick=click_pg_top()>Top</div></div>';
-    foreach($conn->query("select * from post_b where category='pg' and area='rspuram' order by likes_count desc") as $row)
+    foreach($conn->query("select * from post_b where category='cg' and area='rspuram' order by likes_count desc") as $row)
     {   foreach($conn->query('select * from business_info where b_id="'.$row['b_id'].'"') as $k){
        include 'offer-template.php';
     }
