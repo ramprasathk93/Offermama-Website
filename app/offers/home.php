@@ -31,7 +31,7 @@ sec_session_start();
         $("#all").click(function(){
             $("#paperwall").css("background-image","none");
             $("#paperwall").css("background-color","#ef5350");
-           $(".off").css("background-image","url(http://localhost/offermama/app/offers/images/rest.jpg)","no-repeat");
+           $(".off").css("background-image","url(images/rest.jpg)","no-repeat");
             $(".off").css("background-size","100%");
             $("#mini_bar").css("opacity",1); 
             $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
@@ -48,7 +48,7 @@ sec_session_start();
         $("#restaurants").click(function(){
             $("#paperwall").css("background-image","none");
             $("#paperwall").css("background-color","#ef5350");
-           $(".off").css("background-image","url(http://localhost/offermama/app/offers/images/rest.jpg)","no-repeat");
+           $(".off").css("background-image","url(images/rest.jpg)","no-repeat");
             $(".off").css("background-size","100%");
             $("#mini_bar").css("opacity",1); 
             $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
@@ -65,7 +65,7 @@ sec_session_start();
         $("#grooming").click(function(){
             $("#paperwall").css("background-image","none");
             $("#paperwall").css("background-color","#ef5350");
-           $(".off").css("background-image","url(http://localhost/offermama/app/offers/images/spects.jpg)");
+           $(".off").css("background-image","url(images/spects.jpg)");
             $(".off").css("background-repeat","no-repeat");
             $(".off").css("background-size","100% 100%");
             $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
