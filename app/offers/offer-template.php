@@ -63,7 +63,7 @@
                 <span>
                 <div class="row">
                     <div class="small-2 columns">
-                        <img src="businesslogos/'.$k['logo'].'">
+                        <a href="business-info.php?bid='.$row['b_id'].'"><img src="businesslogos/'.$k['logo'].'"/></a>
                     </div>
                     <div class="small-8 small-uncentered columns">
                         <font style="font-family:Open Sans;font-size:14px;">
@@ -136,7 +136,7 @@
                 <span>
                 <div class="row">
                     <div class="small-2 columns">
-                        <img src="businesslogos/'.$k['logo'].'">
+                        <a href="business-info.php?bid='.$row['b_id'].'"><img src="businesslogos/'.$k['logo'].'"></a>
                     </div>
                     <div class="small-8 small-uncentered columns">
                         <font style="font-family:Open Sans;font-size:14px;">
