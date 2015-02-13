@@ -198,8 +198,3 @@ else{
         })
         }
     }
-/*    function click_businfo(bid){
-        $.post('business-info.php',{'bid':bid},function(response){
-            $('body').html(response);
-        })}
-*/

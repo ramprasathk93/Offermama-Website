@@ -17,6 +17,9 @@ foreach($conn->query('select * from business_info where b_id="'.$bid.'"')as $x){
     <link rel="stylesheet" type="text/css" href="../../common/font-awesome-4.2.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../../common/css/main.css">
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="functions.js"></script>
+    <script src="../../common/js/foundation/foundation.js"></script>
       
     <script src="../../common/js/jquery.min.js"></script>
     <script src="functions.js"></script>
