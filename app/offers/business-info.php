@@ -97,7 +97,6 @@ foreach($conn->query('select * from business_info where b_id="'.$bid.'"')as $x){
             font-family: "Open Sans";
             background-color:#fff;
            z-index:50;
-            height:20%;
             width:79%;
             border-radius:2px;
              box-shadow:0px 2px 5px 0px rgba(0,0,0,0.50);
@@ -144,7 +143,7 @@ foreach($conn->query('select * from business_info where b_id="'.$bid.'"')as $x){
     <div class="row" style="text-align:center;">
         <div class="small-5 small-uncentered columns bus_column">
              <div class="small-5 small-uncentered columns bus_img">
-            <?php echo '<img class="row right";" src="businesslogos/'.$img.'.jpg">'; ?>
+            <?php echo '<img class="row right";" src="businesslogos/'.$img.'">'; ?>
                  </div>
         </div>
         <div class="small-5 small-uncentered columns bus_ad" style="text-align:left;">
@@ -208,16 +207,12 @@ foreach($conn->query('select * from business_info where b_id="'.$bid.'"')as $x){
         <div class="review_panel" style="text-align:left;">';
             <?php
             foreach($conn->query('select * from review where b_id="'.$bid.'" order by likes')as $y){ 
-                echo '<div class="row">
-                <div class="small-7 small-uncentered columns"><b>User ID : </b>'.$y["u_id"].'</div>
-                <div class="small-3 small-uncentered columns">'.$y["likes"].' likes</div>
-                </div>';
-                echo '<br/>
-                <div class="row">
-                <div class="small-12 small-uncentered columns"><b>Review : </b>'.$y["content"].'</div>
+                echo '<div class="panel offer">';
+            foreach($conn->query('select * from user_info where u_id="'.$y["u_id"].'"')as $a){
+                echo '<div><b>'.$a['name'].'</b></div>';
+            }
+                echo '<div>'.$y["content"].'</div>
                 </div>'; 
-                echo '
-                <hr style="">';
             } 
             ?>
         </div>
