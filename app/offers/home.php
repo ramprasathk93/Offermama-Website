@@ -35,7 +35,7 @@ sec_session_start();
            $(".off").css("background-image","url(http://localhost/offermama/app/offers/images/rest.jpg)","no-repeat");
             $(".off").css("background-size","100%");
             $("#mini_bar").css("opacity",1); 
-            $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
+            $(".off").css("box-shadow","0px 1px 12px 7px #C63633");
             $("#paperwall .wall").css("opacity",0.9);
             $(".row .p2p").css("opacity",0.7);
               $(".top a").css("color","#fff");
@@ -107,7 +107,7 @@ sec_session_start();
         
             $(".off").css("box-shadow"," 0px 1px 5px 6px #C69C61");
          $("#mini_bar").css("opacity",1);  
-            $("#paperwall .wall").css("opacity",0.7);
+            $("#paperwall .wall").css("opacity",0.9);
             $(".row .p2p").css("opacity",0.7);
               $(".top a").css("color","#fff");
           
@@ -139,7 +139,7 @@ sec_session_start();
             $(".off").css("background-size","100% 100%");
             $(".off").css("box-shadow"," 0px 1px 10px 3px #383333");
             $("#mini_bar").css("opacity",1);
-            $("#paperwall .wall").css("opacity",0.5);
+            $("#paperwall .wall").css("opacity",0.9);
             $(".row .p2p").css("opacity",0.7);
               $(".top-bar-section a").css("color","#fff");
               $(".index h1").css("opacity",1);
@@ -147,12 +147,12 @@ sec_session_start();
         });
         });
     </script>
-    <!--<style>
+    <style>
            .off{
-                 box-shadow: 0px 1px 20px 7px #C63633;
+                  box-shadow:0px 2px 5px 0px rgba(0,0,0,0.24);
            }
         
-    </style>-->
+    </style>
     <style>
   
     </style>
