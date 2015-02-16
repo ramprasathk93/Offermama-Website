@@ -27,7 +27,7 @@
            $(".off").css("background-image","url(images/rest.jpg)","no-repeat");
             $(".off").css("background-size","100%");
             $("#mini_bar").css("opacity",1); 
-            $(".off").css("box-shadow"," 0px 2px 5px 0px rgba(0,0,0,0.3");
+            $(".off").css("box-shadow"," 0px 1px 10px 3px #383333");
             $("#paperwall .wall").css("opacity",0.9);
            $(".row .p2p").css("opacity",0.9);
               $(".top a").css("color","#fff");
@@ -140,9 +140,9 @@
         });
         });
     </script>
-    <!--<style>
-           .off{
-                 box-shadow: 0px 1px 20px 7px #C63633;
+<!-- <style>
+           .row .off{
+                  box-shadow:0px 0px 0px 0px rgba(0,0,0,0.24)
            }
         
     </style>-->
