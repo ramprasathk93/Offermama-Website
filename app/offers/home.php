@@ -187,7 +187,7 @@ sec_session_start();
 <ul class="right index">
 <!--<li><a href='profile.php'>Profile</a></li>-->
 <!--<li><a href='user_ad.php'>Sell your stuff</a></li>-->
-<li><a href="register.php">Register</a></li>
+<li>Welcome <?php echo htmlentities($_SESSION['username']); ?></li>
 
 <li><a href='includes/logout.php'>Logout</a></li>
 </ul>
