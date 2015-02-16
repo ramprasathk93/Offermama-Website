@@ -232,7 +232,7 @@ sec_session_start();
 <section class="top-bar-section top"> 
     
     <ul class="left index_leftuser">
-    <li >Welcomes <?php echo htmlentities($_SESSION['username']); ?></li>
+    <li >Welcome <?php echo htmlentities($_SESSION['username']); ?></li>
         </ul>
 <ul class="right index">
 <!--<li><a href='profile.php'>Profile</a></li>-->
