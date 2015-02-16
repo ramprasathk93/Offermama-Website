@@ -27,24 +27,30 @@ sec_session_start();
   ga('send', 'pageview');
 
 </script>
+    <style>
+       
+    </style>
     <script>
         $(document).ready(function(){
         $("#all").click(function(){
-            $("#paperwall").css("background-image","none");
-            $("#paperwall").css("background-color","#ef5350");
-           $(".off").css("background-image","url(images/rest.jpg)","no-repeat");
-            $(".off").css("background-size","100%");
+            $("#paperwall").css("background-image","url(images/all.png)");
+              $(".off").css("background-image", "none");
+            $("#paperwall").css("background-color","none");
             $("#mini_bar").css("opacity",1); 
-            $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
+            $(".off").css("box-shadow","none");
             $("#paperwall .wall").css("opacity",0.9);
             $(".row .p2p").css("opacity",0.7);
               $(".top a").css("color","#fff");
             $(".index h1").css("opacity",1);
              $(".index h4").css("opacity",1);
             $(".index img").css("opacity",1);
-            
-        });
-    });
+              $(".index_left").css("opacity",0);
+             $(".index_leftuser").css("opacity",1);
+            $(".index_leftuser").css("margin-left",0);
+            $(".index_leftuser li").css("font-weight","bold");
+            });
+    }); 
+   
     $(document).ready(function(){
         $("#restaurants").click(function(){
             $("#paperwall").css("background-image","none");
@@ -59,6 +65,12 @@ sec_session_start();
             $(".index h1").css("opacity",1);
              $(".index h4").css("opacity",1);
             $(".index img").css("opacity",1);
+              $(".index_left").css("opacity",0);
+             $(".index_leftuser").css("opacity",1);
+            $(".index_leftuser").css("margin-left",0);
+            $(".index_leftuser li").css("font-weight",200);
+        
+            
             
         });
     });
@@ -76,6 +88,12 @@ sec_session_start();
               $(".top a").css("color","#fff");
                   $(".index h1").css("opacity",1);
             $(".index img").css("opacity",1);
+             $(".index_left").css("opacity",0);
+             $(".index_leftuser").css("opacity",1);
+            $(".index_leftuser").css("margin-left",0);
+            $(".index_leftuser li").css("font-weight",200);
+            $(".index h1").css("opacity",1);
+        
             
         });
     });
@@ -94,6 +112,11 @@ sec_session_start();
             $(".top a").css("color","#fff");
                   $(".index h1").css("opacity",1);
             $(".index img").css("opacity",1);
+             $(".index_left").css("opacity",0);
+             $(".index_leftuser").css("opacity",1);
+            $(".index_leftuser").css("margin-left",0);
+            $(".index_leftuser li").css("font-weight",200);
+        
         });
         });
         $(document).ready(function(){
@@ -101,18 +124,23 @@ sec_session_start();
             $("#paperwall").css("background-image","none");
                $("#mini_bar").css("opacity",1);
             $("#paperwall").css("background-color","#DEB77E");
-           $(".off").css("background-image","url(images/cake1.jpg)");
+           $(".off").css("background-image","url(images/cake3.jpg)");
             $(".off").css("background-repeat","no-repeat");
             $(".off").css("background-size","100% 100%");
         
             $(".off").css("box-shadow"," 0px 1px 5px 6px #C69C61");
          $("#mini_bar").css("opacity",1);  
-            $("#paperwall .wall").css("opacity",0.7);
+            $("#paperwall .wall").css("opacity",0.9);
             $(".row .p2p").css("opacity",0.7);
               $(".top a").css("color","#fff");
           
                   $(".index h1").css("opacity",1);
             $(".index img").css("opacity",1);
+             $(".index_left").css("opacity",0);
+             $(".index_leftuser").css("opacity",1);
+            $(".index_leftuser").css("margin-left",0);
+            $(".index_leftuser li").css("font-weight",200);
+        
         });
         });
         $(document).ready(function(){
@@ -124,40 +152,58 @@ sec_session_start();
             $(".off").css("background-size","100% 100%");
             $("#paperwall .wall").css("opacity",0.9);
             $("#mini_bar").css("opacity",1);
+             $(".row .p2p").css("opacity",0.7);
             $(".off").css("box-shadow"," 0px 1px 8px 6px #CC6687");
               $(".top a").css("color","#fff");
                  $(".index h1").css("opacity",1);
             $(".index img").css("opacity",1);
+             $(".index_left").css("opacity",0);
+             $(".index_leftuser").css("opacity",1);
+            $(".index_leftuser").css("margin-left",0);
+            $(".index_leftuser li").css("font-weight",200);
+        
         });
         });
         $(document).ready(function(){
         $("#electronics").click(function(){
             $("#paperwall").css("background-image","none");
             $("#paperwall").css("background-color","#616161");
-           $(".off").css("background-image","url(images/electronic.jpg)");
+           $(".off").css("background-image","url(images/electronic1.jpg)");
             $(".off").css("background-repeat","no-repeat");
             $(".off").css("background-size","100% 100%");
             $(".off").css("box-shadow"," 0px 1px 10px 3px #383333");
             $("#mini_bar").css("opacity",1);
-            $("#paperwall .wall").css("opacity",0.5);
+            $("#paperwall .wall").css("opacity",0.9);
             $(".row .p2p").css("opacity",0.7);
               $(".top-bar-section a").css("color","#fff");
               $(".index h1").css("opacity",1);
             $(".index img").css("opacity",1);
+             $(".index_left").css("opacity",0);
+             $(".index_leftuser").css("opacity",1);
+            $(".index_leftuser").css("margin-left",0);
+            $(".index_leftuser li").css("font-weight",200);
+        
         });
         });
     </script>
-    <!--<style>
-           .off{
-                 box-shadow: 0px 1px 20px 7px #C63633;
-           }
-        
-    </style>-->
     <style>
-  
+           .off{
+                  box-shadow:0px 2px 5px 0px rgba(0,0,0,0.24);
+                background-image:none;
+           }
+         #paperwall{
+            background-image:url(images/all.png);
+             
+        }
+        
+       
+        .index_leftuser{
+            opacity:1;
+        }
     </style>
+    
 </head>
-<body id="paperwall">
+<body id=paperwall>
 <?php if (login_check($mysqli) == true) : ?>
 
 <div class"contain-to-grid fixed">
@@ -184,10 +230,14 @@ sec_session_start();
 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 </ul>
 <section class="top-bar-section top"> 
+    
+    <ul class="left index_leftuser">
+    <li >Welcomes <?php echo htmlentities($_SESSION['username']); ?></li>
+        </ul>
 <ul class="right index">
 <!--<li><a href='profile.php'>Profile</a></li>-->
 <!--<li><a href='user_ad.php'>Sell your stuff</a></li>-->
-<li><a href="register.php">Register</a></li>
+
 
 <li><a href='includes/logout.php'>Logout</a></li>
 </ul>
