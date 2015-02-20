@@ -238,7 +238,7 @@ sec_session_start();
 <!--<li><a href='profile.php'>Profile</a></li>-->
 <!--<li><a href='user_ad.php'>Sell your stuff</a></li>-->
 
-
+<li><a href='contact_us.html'>Contact Us</a></li>
 <li><a href='includes/logout.php'>Logout</a></li>
 </ul>
 </section>
