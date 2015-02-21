@@ -26,7 +26,7 @@ if (login_check($mysqli) == true) {
                     box-shadow:0px 0px 0px;
             }
         button:hover, button:focus, button:hover,  button:focus{
-            transition:right 1000ms ease-out;
+            -webkit-transition: 0.7s;
         box-shadow:0px 0px 0px 0px;
         background-color:#0D47A1;
         }
@@ -54,7 +54,7 @@ if (login_check($mysqli) == true) {
 <li class="name">
 <h1>
 <a href="index.php" style="color:#0D47A1">
-Offermama
+Offermama<sup>beta</sup>
 </a>
 </h1>
 </li>
@@ -63,13 +63,12 @@ Offermama
 <section class="top-bar-section">
     <section class="top-bar-login">
  
-<ul class="left">
-<!--<li class="divider"></li>-->
+<ul class="right">
+    <!--<li class="divider"></li>-->
+    <li><a href='contact_us.html'>Contact Us</a></li>
 <li><a href='user_ad.php'>Sell your stuff</a></li>
 <!--<li class="divider"></li>-->
-</ul>
- 
-<ul class="right">
+
 <!--<li class="divider"></li>-->
     <li><a href="register.php">Register</a></li>
 <!--<li class="divider"></li>-->
@@ -82,7 +81,7 @@ Offermama
 <div class="row">
     <div class="small-4 columns small-centered">
       <div class="signup-panel">
-        <p class="welcome"> Welcome Back to Offermama</p>
+        <p class="welcome">Welcome Back to Offermama</p>
         <form  action="includes/process_login.php" method="post" name="login_form">
           <div class="row collapse">
             <!--<div class="small-2 columns">
