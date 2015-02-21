@@ -1,7 +1,7 @@
 <?php
 
 //database configurations
-$servername = "50.62.209.12";
+$servername = "localhost";
 $username = "primary_user";
 $password = "BZtpxSf5pUxZTMWR";
 $dbname = "offermama";
