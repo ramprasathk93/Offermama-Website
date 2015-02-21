@@ -57,6 +57,8 @@
 
 .top-bar-section ul li{
    background-color: transparent;
+ 
+  
     
 }
 .top li:not(.has-form) a:not(.button){
@@ -71,7 +73,13 @@
 .top ul li{
    background-color: transparent;
     margin-top:5%;
+  
         
+}
+.top ul li > a{
+    font-size: 100%;
+    font-weight: 400;
+    font-family: "Open Sans";
 }
 
 .menu{
@@ -96,15 +104,15 @@
     height:auto;
     width:auto;
     padding-top: 10%;
-    
-   
+    font-weight: 500;
+      font-size: 100%;
     
     
 }
 
 
 .tabs, .tabs pill{
-    opacity: 0.7;
+    opacity: 0.8;
     height: auto;
         position: relative;
     background-color:#BDBDBD;
@@ -112,8 +120,9 @@
 }
 .tabs dd >a{
     height: 100%;
-    font-size: 95%;
+ 
     width: 100%;
+    
   
 }
 .off{
@@ -125,7 +134,7 @@
     border-bottom: thick;
     border-bottom-color: #E0E0E0;
     border-bottom-width: thick;
-    background-image: url(http://localhost/offermama/app/offers/images/rest.jpg);
+    background-image: url(../../images/rest.jpg);
     background-size:auto;
     z-index: 99;
 
@@ -223,7 +232,7 @@ margin-left:20%;
 }
 .signup-panel form input, .signup-panel form span {
   height: 40px;
-    border-radius: 6px;
+    border-radius: 4px;
     margin-top: 5px;
 }
 .welcome {
@@ -233,14 +242,14 @@ margin-left:20%;
   font-size: 35px;
     font-weight: 200;
 
-    margin-left:6%;
+    
     
     color: white;
 }
 .signup-panel p {
   font-size: 13px;
   font-weight: 200;
-  margin-left: 30%;
+ margin-left:-10%;
 }
 .signup-panel .button {
   left: 35%;
@@ -291,6 +300,11 @@ margin-left:20%;
 .top-bar-reg ul li:not(.has-form) a:not(.button){
     color: #243456;
 }
+.top-bar-reg ul li >a
+{
+    font-size: 100%;
+    font-weight: 500;
+}
 .reg{
     color: white;
     font-family: "Open Sans";
@@ -321,6 +335,9 @@ margin-left:20%;
 .login_bg{
  background-color:#4FC3F7;
 }
+.contact_bg{
+background-color: #f44336;
+}
 .login p a{
     color: #0D47A1;
 }
@@ -336,15 +353,46 @@ margin-left:20%;
 .top-bar-login ul li:not(.has-form) a:not(.button){
     color: #0D47A1;
 }
+.top-bar-login ul li >a
+{
+    font-size: 100%;
+    font-weight: 500;
+}
   
           .top-bar-login ul li:not(.has-form) a:not(.button){
               -webkit-transition: 0.7s;
     background-color:#fff;
-        border-style:none;}
+        border-style:none;
+          color:#0D47A1;}
        
         .top-bar-login ul li:not(.has-form) a:not(.button):hover{
              -webkit-transition: 0.7s;
     background-color:#0D47A1;
+            opacity:90%;
+    color:#fff;
+  }
+ .top-bar-contact{
+            left: 0;
+  position: relative;
+  width: auto;
+  transition: left 300ms ease-out; }
+
+.top-bar-contact ul li >a
+{
+    font-size: 100%;
+    font-weight: 500;
+   font-weight: 550;
+}
+  
+          .top-bar-contact ul li:not(.has-form) a:not(.button){
+              -webkit-transition: 0.7s;
+    background-color:#fff;
+        border-style:none;
+          color: #f44336;}
+       
+        .top-bar-contact ul li:not(.has-form) a:not(.button):hover{
+             -webkit-transition: 0.7s;
+    background-color:#f44336;
             opacity:90%;
     color:#fff;
   }
@@ -438,8 +486,9 @@ margin-left:20%;
     color:#0D47A1;
 }
 .index h1{
-opacity:0;
+opacity:1;
 }
+
 sup{
     font-size: 60%;
     font-family: "Open Sans";
@@ -452,8 +501,20 @@ sup{
       color: #4B77BE;
 }
 
+
+.index_leftuser li{
+     margin-left: 0%;
+  line-height: 250%;
+    float: left;
+    color: #fff;
+    font-family: "Open Sans";
+    font-size-adjust: auto;
+    font-weight: bold;
+    font-size: 110%;
+    
+}
 #paperwall{
-background-image: url(../../app/offers/images/OfferMama_Start_Page.JPG);
+background-image: url(../../app/offers/images/Landing_Page_Offermama.JPG);
     background-size: cover;
     
 }
@@ -604,4 +665,18 @@ background:linear-gradient(#757575,transparent);
     margin-top: 1%;
     font-size: 150%;
     
+}
+.contact h1{
+    margin-top:5%;
+    margin-left:45%;
+    font-family: "Ubuntu";
+    font-size: 200%;;
+    color: #fff;
+}
+.contact p{
+    margin-top: 0%;
+    margin-left: 5%;
+    font-family: "Ubuntu";
+    font-size: 120%;
+    color: #fff;
 }
