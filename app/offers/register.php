@@ -76,7 +76,7 @@ Offermama<sup>beta</sup>
 <!--<li class="divider"></li>-->
 
 <!--<li class="divider"></li>-->
-
+    <li><a href='contact_us.html'>Contact Us</a></li>
 <li ><a href='login.php'>Login</a></li>
 </ul>
      </section>
