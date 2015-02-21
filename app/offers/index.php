@@ -24,10 +24,10 @@
         $("#all").click(function(){
             $("#paperwall").css("background-image","none");
             $("#paperwall").css("background-color","#ef5350");
-           $(".off").css("background-image","url(images/rest.jpg)","no-repeat");
+           $(".off").css("background-image","url(images/all.png)","no-repeat");
             $(".off").css("background-size","100%");
             $("#mini_bar").css("opacity",1); 
-            $(".off").css("box-shadow"," 0px 2px 5px 0px rgba(0,0,0,0.3");
+           $(".off").css("box-shadow"," 0px 1px 12px 7px #C63633");
             $("#paperwall .wall").css("opacity",0.9);
            $(".row .p2p").css("opacity",0.9);
               $(".top a").css("color","#fff");
@@ -93,7 +93,7 @@
             $("#paperwall").css("background-image","none");
                $("#mini_bar").css("opacity",1);
             $("#paperwall").css("background-color","#DEB77E");
-           $(".off").css("background-image","url(images/cake1.jpg)");
+           $(".off").css("background-image","url(images/cake3.jpg)");
             $(".off").css("background-repeat","no-repeat");
             $(".off").css("background-size","100% 100%");
         
@@ -127,7 +127,7 @@
         $("#electronics").click(function(){
             $("#paperwall").css("background-image","none");
             $("#paperwall").css("background-color","#616161");
-           $(".off").css("background-image","url(images/electronic.jpg)");
+           $(".off").css("background-image","url(images/electronic1.jpg)");
             $(".off").css("background-repeat","no-repeat");
             $(".off").css("background-size","100% 100%");
             $(".off").css("box-shadow"," 0px 1px 10px 3px #383333");
@@ -140,9 +140,9 @@
         });
         });
     </script>
-    <!--<style>
-           .off{
-                 box-shadow: 0px 1px 20px 7px #C63633;
+<!-- <style>
+           .row .off{
+                  box-shadow:0px 0px 0px 0px rgba(0,0,0,0.24)
            }
         
     </style>-->
@@ -174,6 +174,7 @@
 <section class="top-bar-section top"> 
 <ul class="right index">
 <!--<li><a href='user_ad.php'>Sell your stuff</a></li>-->
+    <li><a href='contact_us.html'>Contact Us</a></li>
 <li><a href="register.php">Register</a></li>
 
 <li><a href='login.php'>Login</a></li>
