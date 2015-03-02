@@ -34,11 +34,22 @@
 }
 
 .tb{
-    background-color:transparent;
+    background-color:blue;
     <!--box-shadow: 0px 8px 6px -4px #999;-->
+
+}
+.tb_index{
+    background-color: #fff;
+    height:8%;
 }
 .tb h1 a{
     margin-top: 5%;
+    
+    font-size: 150%;
+}
+.tb_index h1 a{
+    margin-top: 5%;
+    
     font-size: 150%;
 }
 .top-bar-section li:not(.has-form) a:not(.button){
@@ -82,9 +93,35 @@
     font-family: "Open Sans";
 }
 
+.top_index li:not(.has-form) a:not(.button){
+    background-color:transparent;
+      color: blue;
+
+ 
+}
+.top_index li:not(.has-form) a:not(.button):hover{
+   background-color: transparent;
+    color: blue;
+  
+}
+.top_index ul li{
+   background-color: transparent;
+    margin-top:1%;
+  
+        
+}
+.top_index ul li > a{
+    font-size: 100%;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
 .menu{
     width:auto;
-    margin-top: 2%;
+    margin-top: 0%;
+    height:85%;
+  position: fixed;
+    margin-left: 40%;
+z-index:100;
 }
 
 .tabs dd{
@@ -103,7 +140,7 @@
   color: #000;
     height:auto;
     width:auto;
-    padding-top: 10%;
+    padding-top: 11%;
     font-weight: 500;
       font-size: 100%;
     
@@ -125,11 +162,12 @@
     
   
 }
+
 .off{
 
-    margin-top: -0.5%;
+    margin-top: 3.2%;
     max-width: 100%;
-   height: 90.5%;
+   height:100%;
     border-bottom-style: solid;
     border-bottom: thick;
     border-bottom-color: #E0E0E0;
@@ -137,6 +175,7 @@
     background-image: url(../../images/rest.jpg);
     background-size:auto;
     z-index: 99;
+    position: fixed;
 
   
   
@@ -151,6 +190,8 @@
     background-color:#BDBDBD;
     border-radius:5px;
 }
+
+
 .p2p::-webkit-scrollbar{
     width:6px;
     background-color:#eff6f9;
@@ -160,12 +201,23 @@
     background-color:#e1e1e1;
     border-radius:10px;
 }
+.p2p_home::-webkit-scrollbar{
+    width:6px;
+    background-color:#eff6f9;
+}
+.p2p_home::-webkit-scrollbar-thumb{
+    width:6px;
+    background-color:#e1e1e1;
+    border-radius:10px;
+}
 .tabs dd > a.active_category{
     background-color:#e1e1e1;
 }
 .offer{
     cursor:default;
-    margin:2%;
+    margin-top:2%;
+    margin-left: 2%;
+    margin-right: 2%;
     background-color: #eff6f9;
     box-shadow: 0px 4px 8px 0.2px #999;
     border-style: none;
@@ -190,32 +242,35 @@
 }
 
 .wall{
-	height:80%;
+	height:65%;
     overflow-y:auto;
 	background-color:#efefef;
     opacity: 0.9;
-    margin-left: 5%;
+    margin-left:19.1%;
     border-bottom:thick solid;
         border-bottom-color: #BFBFBF;
-    position: relative;
-    width:100%;
+    position: fixed;
+ margin-top: 3%;
+    width:47.8%;
+    z-index: 100;
 }
+
 
 .p2p{
 	width: 25%;
-    height:78%;
+    height:71%;
     
-    margin-top: 2%;
-    margin-left: -2%;
+    margin-top: 0%;
+    margin-left: 72%;
     overflow-y:auto;
 	background-color:#eff6f9;
     opacity: 1;
-    border-radius:5px;
+    border-radius:2px;
     position: fixed;
+    z-index: 99;
 }
-.maincategory{
-	border-radius:15;
-}
+
+
 .signup-panel {
   /*border-radius: 5px;*/
  /* border: 1px solid #ccc;*/
@@ -241,7 +296,7 @@ margin-left:20%;
     margin-top: 5%;
   font-size: 35px;
     font-weight: 200;
-
+margin-left: 9%;
     
     
     color: white;
@@ -311,8 +366,9 @@ margin-left:20%;
     font-size-adjust: auto;
     font-weight: 400;
     font-size: 20px;
-    margin-top: 10%;
-        
+    margin-top: 8%;
+    margin-left: 20%;
+        width: 100%;
 }
 .reg a
 {
@@ -321,7 +377,7 @@ margin-left:20%;
 }
 .login{
         width: 150%;
-    margin-left: -15%;
+    margin-left: -30%;
 }
 .login p{
         font-family: "Open Sans";
@@ -451,11 +507,13 @@ background-color: #f44336;
 }
 #mini_bar
 {
-    margin-left: 5%;
-    margin-top: 3%;
+    margin-left: 19.1%;
+   margin-top: 0%;
     opacity: 0;
-    width: 100%;
-    position: relative;
+    width: 47.8%;
+    position: fixed;
+    height: auto;
+    z-index: 200;
 }
 
 #B123 a{
@@ -500,22 +558,26 @@ sup{
     opacity: 1;
       color: #4B77BE;
 }
-
+.index li{
+    color: blue;
+}
 
 .index_leftuser li{
      margin-left: 0%;
   line-height: 250%;
     float: left;
-    color: #fff;
+   color: blue;
     font-family: "Open Sans";
     font-size-adjust: auto;
-    font-weight: bold;
+   
     font-size: 110%;
     
 }
 #paperwall{
-background-image: url(../../app/offers/images/Landing_Page_Offermama.JPG);
+background-image:none;
     background-size: cover;
+ height:100%;
+    z-index: 20;
     
 }
 #paperwall .row{
@@ -525,7 +587,14 @@ background-image: url(../../app/offers/images/Landing_Page_Offermama.JPG);
 {
     opacity: 0;
 }
+#paperwall .wall_home 
+{
+    opacity: 0;
+}
 #paperwall .p2p{
+opacity: 0;
+}
+#paperwall .p2p_home{
 opacity: 0;
 }
 .off .large-4{
@@ -670,6 +739,7 @@ background:linear-gradient(#757575,transparent);
     margin-top:5%;
     margin-left:45%;
     font-family: "Ubuntu";
+    font-weight: 400;
     font-size: 200%;;
     color: #fff;
 }
@@ -679,4 +749,78 @@ background:linear-gradient(#757575,transparent);
     font-family: "Ubuntu";
     font-size: 120%;
     color: #fff;
+}
+.slider{
+  margin-top: -5%;
+  
+
+    width:100%;
+    position:fixed;
+
+z-index: 100;
+}
+.slider .dots{
+    position: relative;
+    left: 45%;
+    right: 0;
+    bottom:20%;
+    box-sizing: border-box;
+    height:10%;
+    z-index: 100;
+}
+.slider .dots li{
+    display: inline-block;
+    border-radius: 6px;
+    margin: 0 4px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    -webkit-transition: background .5s,opacity .5s;
+}
+.slider .dots li.active{
+    background: #fff;
+    opacity: 1;
+}
+ol{
+    display: block;
+    list-style-type: decimal;
+}
+.logo{
+    background-color:#fff;
+    width:15%;height:20%;
+    margin-left:25%;
+    margin-top:24%;
+    z-index:50;
+}
+.offermama_logo p{
+    font-size: 400%;
+    margin-left: 38%;
+    margin-top: -3%;
+    font-weight:bold; 
+    font-family:"Candela-Bold";
+    color:#1976D2;
+    
+}
+@font-face{
+            font-family:Fontin;
+            src:  url("../fonts/Fontin-Bold.otf");
+    src: url(../fonts/Fontin-Regular.otf);
+    
+   
+    
+        }
+@font-face{
+    font-family: Open Sans;
+   
+    src: url(../fonts/OpenSans-Light.ttf);
+   
+}
+@font-face{
+    font-family: Candela-Bold;
+    src: url(../fonts/Aller_Lt.ttf);
+    }
+@font-face{
+    font-family: Ubuntu;
+    src: url(../fonts/Ubuntu-M.ttf);
 }
